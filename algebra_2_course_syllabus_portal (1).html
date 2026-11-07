@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Peter the Rock Academy | Algebra 2 Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- MathJax for rendering equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080c14;
+            color: #f1f5f9;
+        }
+        .math-grid {
+            background-size: 36px 36px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+        .tab-active {
+            border-color: #38bdf8;
+            color: #38bdf8;
+            background-color: rgba(56, 189, 248, 0.1);
+        }
+    </style>
+</head>
+<body class="math-grid min-h-screen flex flex-col justify-between antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- Top Navigation Header -->
+    <header class="w-full border-b border-slate-800 bg-slate-950/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            
+            <!-- School & Course Branding -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center font-mono font-bold text-lg text-sky-400 shadow-md shadow-sky-500/5">
+                    $$\chi^2$$
+                </div>
+                <div>
+                    <span class="text-xs uppercase font-semibold text-sky-400 tracking-wider block">Saint Peter the Rock Academy</span>
+                    <span class="text-base font-bold text-white tracking-tight">We rock Algebra</span>
+                </div>
+            </div>
+
+            
+
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-12 flex-grow">
+        
+        <!-- Hero Welcome Header -->
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-6 sm:p-10 backdrop-blur-sm relative overflow-hidden shadow-2xl">
+            <div class="absolute -top-24 -right-24 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                <div class="space-y-4 max-w-3xl">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-xs font-medium text-sky-300">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Holt Algebra 2 Curriculum</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        Algebra 2 Syllabus & Portal
+                    </h1>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Welcome to Algebra 2 at Saint Peter the Rock Academy. This portal contains our complete semester schedule, daily homework assignments, checkpoint dates, test schedules, and video learning resources.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-4 text-xs text-slate-400">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-user-graduate text-sky-400"></i>
+                            <span class="text-slate-200 font-semibold">Instructor: Dr. William A. Swick</span>
+                        </div>
+                        <span class="text-slate-700">•</span>
+                        <div>Publisher: <span class="text-slate-300">Holt Rinehart Winston</span></div>
+                    </div>
+                </div>
+
+                <!-- Featured Math Formulas Card -->
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3 shrink-0 lg:w-80 font-mono text-xs text-slate-300 shadow-inner">
+                    <div class="p-2 bg-slate-900/60 rounded border border-slate-800/80 text-center text-sky-300">
+                        $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+                    </div>
+                    <div class="p-2 bg-slate-900/60 rounded border border-slate-800/80 text-center text-sky-300">
+                        $$a^x \cdot a^y = a^{x+y}$$
+                    </div>
+                    <div class="p-2 bg-slate-900/60 rounded border border-slate-800/80 text-center text-sky-300">
+                        $$\log_b(xy) = \log_b(x) + \log_b(y)$$
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Overview & Assessment Structure -->
+        <section id="section-overview" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-6 space-y-3">
+                <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center text-base">
+                    <i class="fa-regular fa-calendar-days"></i>
+                </div>
+                <h2 class="text-lg font-bold text-white">Class Schedule</h2>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    In-class instruction takes place twice a week every <strong class="text-slate-200">Tuesday and Thursday</strong>. Attendance and active participation during lectures are required.
+                </p>
+            </div>
+
+            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-6 space-y-3">
+                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-base">
+                    <i class="fa-solid fa-pen-ruler"></i>
+                </div>
+                <h2 class="text-lg font-bold text-white">Homework Routine</h2>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Short daily assignments (~30 minutes) are assigned for <strong class="text-slate-200">Monday, Wednesday, Friday, and Saturday</strong> out of Holt Algebra 2.
+                </p>
+            </div>
+
+            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-6 space-y-3">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-base">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h2 class="text-lg font-bold text-white">Assessments</h2>
+                <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
+                    <li><strong class="text-slate-200">Checkpoint Challenge Assignments:</strong> Completed at the end of each chapter.</li>
+                    <li><strong class="text-slate-200">Fall Semester:</strong> 2 In-Class Tests.</li>
+                    <li><strong class="text-slate-200">Spring Semester:</strong> 3 In-Class Tests + Comprehensive Final Exam.</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- Accessing Your Work Banner -->
+        <div class="bg-sky-950/40 border border-sky-500/30 rounded-xl p-4 sm:p-5 text-left flex items-start space-x-4 max-w-xl mx-auto">
+            <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+            </div>
+            <div class="space-y-1">
+                <h2 class="text-xs font-bold text-sky-300 uppercase tracking-wider">Accessing Your Work & Grade Tokens</h2>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    To submit homework grade tokens: Copy and paste the grade token available after completing all problems on that day. Dropdown sub-pages in the upper right contain modules for each non-school day. Daily work is strongly recommended.
+                </p>
+            </div>
+        </div>
+
+        <!-- Key Academic Dates & Textbook Info -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Dates Card -->
+            <section id="section-dates" class="lg:col-span-2 bg-slate-900/50 border border-slate-800 rounded-xl p-6 space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center text-sm">
+                        <i class="fa-solid fa-flag"></i>
+                    </div>
+                    <h2 class="text-lg font-bold text-white">Key Academic Dates</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                    <div class="bg-slate-950/60 p-3.5 rounded-lg border border-slate-800/80">
+                        <span class="text-slate-400 block mb-1">Holiday Break (No Class)</span>
+                        <span class="text-amber-400 font-semibold text-sm">November 26, 2026</span>
+                        <span class="text-slate-500 block text-[11px] mt-0.5">Thanksgiving Break</span>
+                    </div>
+                    <div class="bg-slate-950/60 p-3.5 rounded-lg border border-slate-800/80">
+                        <span class="text-slate-400 block mb-1">Semester Winter Break</span>
+                        <span class="text-indigo-300 font-semibold text-sm">Dec 18, 2026 – Jan 4, 2027</span>
+                        <span class="text-slate-500 block text-[11px] mt-0.5">Resumes January 5, 2027</span>
+                    </div>
+                    <div class="bg-slate-950/60 p-3.5 rounded-lg border border-slate-800/80">
+                        <span class="text-slate-400 block mb-1">Spring Break</span>
+                        <span class="text-emerald-300 font-semibold text-sm">Mar 23 – Apr 5, 2027</span>
+                    </div>
+                    <div class="bg-slate-950/60 p-3.5 rounded-lg border border-slate-800/80">
+                        <span class="text-slate-400 block mb-1">Final Day of Class</span>
+                        <span class="text-purple-300 font-semibold text-sm">May 13, 2027</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Textbook Info -->
+            <section id="section-textbook" class="bg-slate-900/50 border border-slate-800 rounded-xl p-6 space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center text-sm">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h2 class="text-lg font-bold text-white">Course Textbook</h2>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800 space-y-2">
+                    <div class="text-sm font-semibold text-slate-200">Holt Algebra 2</div>
+                    <div class="text-xs text-slate-400">Publisher: Holt Rinehart Winston</div>
+                    <p class="text-xs text-slate-500 leading-relaxed pt-2 border-t border-slate-800/60">
+                        Students should bring their textbook to all Tuesday & Thursday in-class sessions. Homework sets are directly correlated to section numbers in this edition.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Weekly Schedule Breakdown Section -->
+        <section id="section-schedule" class="space-y-6">
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white tracking-tight">Full-Year Course Schedule</h2>
+                    <p class="text-xs text-slate-400 mt-1">Select semester view: complete chronological schedule with Tuesday/Thursday lectures & M/W/F/Sa homework assignments.</p>
+                </div>
+
+                <!-- Semester Tab Controls -->
+                <div class="flex space-x-2 bg-slate-950 p-1 rounded-xl border border-slate-800 shrink-0">
+                    <button onclick="switchSemester('fall')" id="tab-fall" class="px-5 py-2 text-xs font-semibold rounded-lg border border-transparent transition-all tab-active">
+                        Fall Semester 2026
+                    </button>
+                    <button onclick="switchSemester('spring')" id="tab-spring" class="px-5 py-2 text-xs font-semibold text-slate-400 hover:text-white rounded-lg border border-transparent transition-all">
+                        Spring Semester 2027
+                    </button>
+                </div>
+            </div>
+
+            <!-- Fall Semester Schedule Content -->
+            <div id="semester-fall" class="space-y-6">
+                
+                <!-- Week 1 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 1: Nov 8 – Nov 14, 2026</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 1 Review</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Nov 10 (Class):</span>
+                                <span class="text-slate-300">Ch 1 Review - Sec 1.1-1.4 Linear Equations & Functions</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Linear Equations</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Nov 11 (HW):</span>
+                            <span class="text-slate-400">Holt Alg 2 Sec 1.1-1.4 Practice (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Nov 12 (Class):</span>
+                            <span class="text-slate-300">Ch 1 Review - Sec 1.5-1.8 Inequalities & Absolute Value</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Nov 13 (HW):</span>
+                            <span class="text-slate-400">Sec 1.5-1.8 Practice Set (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Nov 14 (HW):</span>
+                            <span class="text-slate-400">Chapter 1 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Nov 16 (HW):</span>
+                            <span class="text-slate-400">Chapter 1 Review & Skill Mastery (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 2: Nov 15 – Nov 21, 2026</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapters 2 & 3 Review</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Nov 17 (Class):</span>
+                                <span class="text-slate-300">Ch 2 Review - Sec 2.1-2.4 Linear Functions & Domain/Range</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Domain & Range</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Nov 18 (HW):</span>
+                            <span class="text-slate-400">Sec 2.1-2.4 Practice Set (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Thu, Nov 19 (Class):</span>
+                                <span class="text-slate-300">Ch 2 & Ch 3 Review - Sec 2.5-2.7 & 3.1-3.3 Systems of Equations</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Linear Systems</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Nov 20 (HW):</span>
+                            <span class="text-slate-400">Sec 2.5-2.7 & 3.1-3.3 Exercises (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Nov 21 (HW):</span>
+                            <span class="text-slate-400">Chapter 2 & 3 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Nov 23 (HW):</span>
+                            <span class="text-slate-400">Systems & Matrices Warm-up (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 3: Nov 22 – Nov 28, 2026</h3>
+                        <span class="text-xs px-2.5 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full font-mono">Chapter 4 & Holiday</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Nov 24 (Class):</span>
+                                <span class="text-slate-300">Ch 4 Review - Sec 4.1-4.5 Matrices & Matrix Operations</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Matrix Operations</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Nov 25 (HW):</span>
+                            <span class="text-slate-400">Sec 4.1-4.5 Matrix Exercises (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-amber-950/30 border border-amber-500/30 rounded-lg text-amber-300 font-bold">
+                            Thu, Nov 26: No Class — Thanksgiving Break Holiday
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Nov 27 (HW):</span>
+                            <span class="text-slate-400">Thanksgiving Break Homework (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Nov 28 (HW):</span>
+                            <span class="text-slate-400">Chapter 4 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Nov 30 (HW):</span>
+                            <span class="text-slate-400">Quadratic Prep Problem Set (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 4: Nov 29 – Dec 5, 2026</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 5 Quadratics</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Dec 1 (Class):</span>
+                                <span class="text-slate-300">Ch 5 Review - Sec 5.1-5.4 Quadratic Functions & Factoring</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Factoring Quadratics</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Dec 2 (HW):</span>
+                            <span class="text-slate-400">Sec 5.1-5.4 Practice Set (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Thu, Dec 3 (Class):</span>
+                                <span class="text-slate-300">Ch 5 Review - Sec 5.5-5.8 Quadratic Formula & Complex Numbers</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Complex Numbers</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Dec 4 (HW):</span>
+                            <span class="text-slate-400">Sec 5.5-5.8 Exercises (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Dec 5 (HW):</span>
+                            <span class="text-slate-400">Chapter 5 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Dec 7 (HW):</span>
+                            <span class="text-slate-400">Fall Test #1 Review Set (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 5 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 5: Dec 6 – Dec 12, 2026</h3>
+                        <span class="text-xs px-2.5 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full font-mono">Fall Test #1 & Ch 6</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Dec 8 (Class):</span>
+                                <span class="text-slate-300">Ch 6 Review - Sec 6.1-6.4 Exponents & Logarithmic Functions</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Logarithms Intro</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Dec 9 (HW):</span>
+                            <span class="text-slate-400">Sec 6.1-6.4 Practice Set (~30 min).</span>
+                        </div>
+                        <div class="p-3.5 bg-emerald-950/40 border border-emerald-500/40 rounded-lg text-emerald-200">
+                            <span class="font-bold text-emerald-300"><i class="fa-solid fa-file-pen mr-1"></i> Thu, Dec 10 (Class): Fall In-Class Test #1 (Chapters 1–5)</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Dec 11 (HW):</span>
+                            <span class="text-slate-400">Test Corrections and Error Analysis (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Dec 12 (HW):</span>
+                            <span class="text-slate-400">Chapter 6 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Dec 14 (HW):</span>
+                            <span class="text-slate-400">Midterm Review & Problem Set (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 6 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 6: Dec 13 – Dec 19, 2026</h3>
+                        <span class="text-xs px-2.5 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full font-mono">Fall Test #2 / Midterm</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Dec 15 (Class):</span>
+                                <span class="text-slate-300">Ch 6 Review - Sec 6.5-6.7 Properties & Solving Exponential Equations</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Exponential Equations</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Dec 16 (HW):</span>
+                            <span class="text-slate-400">Fall Semester Midterm Practice Set (~30 min).</span>
+                        </div>
+                        <div class="p-3.5 bg-emerald-950/40 border border-emerald-500/40 rounded-lg text-emerald-200">
+                            <span class="font-bold text-emerald-300"><i class="fa-solid fa-file-pen mr-1"></i> Thu, Dec 17 (Class): Fall In-Class Test #2 (Midterm - Chapters 1–6)</span>
+                        </div>
+                        <div class="p-3 bg-indigo-950/40 border border-indigo-500/30 rounded-lg text-indigo-300 font-semibold">
+                            Winter Break Begins: December 18, 2026 – January 4, 2027 (No Classes)
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Spring Semester Schedule Content -->
+            <div id="semester-spring" class="space-y-6 hidden">
+                
+                <!-- Week 7 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 7: Jan 3 – Jan 9, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 5 Quadratics (Part 1)</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Jan 5 (Class):</span>
+                                <span class="text-slate-300">Sec 5.1-5.3 Quadratic Functions & Factoring Quadratics</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Quadratic Intro</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Jan 6 (HW):</span>
+                            <span class="text-slate-400">Sec 5.1-5.3 Factoring Practice (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Jan 7 (Class):</span>
+                            <span class="text-slate-300">Sec 5.4 Completing the Square & Quadratic Formula</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Jan 8 (HW):</span>
+                            <span class="text-slate-400">Sec 5.4 Quadratic Formula Set (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Jan 9 (HW):</span>
+                            <span class="text-slate-400">Completing the Square Drills (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Jan 11 (HW):</span>
+                            <span class="text-slate-400">Complex Numbers Prep (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 8 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 8: Jan 10 – Jan 16, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 5 Quadratics (Part 2)</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Jan 12 (Class):</span>
+                                <span class="text-slate-300">Sec 5.5-5.6 Complex Numbers & Operations</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Complex Numbers</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Jan 13 (HW):</span>
+                            <span class="text-slate-400">Sec 5.5-5.6 Complex Operations Practice (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Jan 14 (Class):</span>
+                            <span class="text-slate-300">Sec 5.7-5.8 Quadratic Inequalities & Curve Fitting</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Jan 15 (HW):</span>
+                            <span class="text-slate-400">Sec 5.7-5.8 Quadratic Inequalities (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Jan 16 (HW):</span>
+                            <span class="text-slate-400">Chapter 5 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Jan 18 (HW):</span>
+                            <span class="text-slate-400">Chapter 5 Mastery Set (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 9 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 9: Jan 17 – Jan 23, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 6 Exponents & Logs</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Jan 19 (Class):</span>
+                                <span class="text-slate-300">Sec 6.1-6.3 Exponential Growth/Decay & Logarithms</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Log Intro</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Jan 20 (HW):</span>
+                            <span class="text-slate-400">Sec 6.1-6.3 Exercises (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Jan 21 (Class):</span>
+                            <span class="text-slate-300">Sec 6.4-6.7 Properties of Logs & Solving Equations</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Jan 22 (HW):</span>
+                            <span class="text-slate-400">Sec 6.4-6.7 Log Equations (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Jan 23 (HW):</span>
+                            <span class="text-slate-400">Chapter 6 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Jan 25 (HW):</span>
+                            <span class="text-slate-400">Polynomial Functions Prep (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 10 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 10: Jan 24 – Jan 30, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 7 Polynomials</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Jan 26 (Class):</span>
+                                <span class="text-slate-300">Sec 7.1-7.3 Polynomial Functions, Graphs & Factoring</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Polynomials</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Jan 27 (HW):</span>
+                            <span class="text-slate-400">Sec 7.1-7.3 Polynomial Factoring (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Jan 28 (Class):</span>
+                            <span class="text-slate-300">Sec 7.4-7.5 Polynomial Equations & Zeros</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Jan 29 (HW):</span>
+                            <span class="text-slate-400">Sec 7.4-7.5 Solving Equations (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Jan 30 (HW):</span>
+                            <span class="text-slate-400">Chapter 7 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Feb 1 (HW):</span>
+                            <span class="text-slate-400">Spring Test #1 Review Set (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 11 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 11: Jan 31 – Feb 6, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full font-mono">Spring Test #1 & Ch 8</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Feb 2 (Class):</span>
+                                <span class="text-slate-300">Sec 8.1-8.3 Rational Functions & Operations</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Rational Functions</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Feb 3 (HW):</span>
+                            <span class="text-slate-400">Sec 8.1-8.3 Rational Practice (~30 min).</span>
+                        </div>
+                        <div class="p-3.5 bg-emerald-950/40 border border-emerald-500/40 rounded-lg text-emerald-200">
+                            <span class="font-bold text-emerald-300"><i class="fa-solid fa-file-pen mr-1"></i> Thu, Feb 5 (Class): Spring In-Class Test #1 (Chapters 5–7)</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Feb 6 (HW):</span>
+                            <span class="text-slate-400">Test Corrections & Remediation (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Feb 7 (HW):</span>
+                            <span class="text-slate-400">Rational Expressions Drills (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Feb 8 (HW):</span>
+                            <span class="text-slate-400">Radical Equations Prep (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 12 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 12: Feb 7 – Feb 13, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 8 Radicals & Rationals</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Tue, Feb 9 (Class):</span>
+                            <span class="text-slate-300">Sec 8.4-8.6 Radical Functions & Radical Equations</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Feb 10 (HW):</span>
+                            <span class="text-slate-400">Sec 8.4-8.6 Radical Equations (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Feb 12 (Class):</span>
+                            <span class="text-slate-300">Sec 8.7-8.8 Radical Expressions & Chapter 8 Checkpoint</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Feb 13 (HW):</span>
+                            <span class="text-slate-400">Chapter 8 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Feb 14 (HW):</span>
+                            <span class="text-slate-400">Rational & Radical Review (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Feb 15 (HW):</span>
+                            <span class="text-slate-400">Conic Sections Prep (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 13 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 13: Feb 14 – Feb 20, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 9 Conics</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Feb 16 (Class):</span>
+                                <span class="text-slate-300">Sec 9.1-9.3 Parabolas & Circles</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Conic Sections</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Feb 17 (HW):</span>
+                            <span class="text-slate-400">Sec 9.1-9.3 Practice Set (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Feb 18 (Class):</span>
+                            <span class="text-slate-300">Sec 9.4-9.6 Ellipses, Hyperbolas & Nonlinear Systems</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Feb 19 (HW):</span>
+                            <span class="text-slate-400">Sec 9.4-9.6 Problems (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Feb 20 (HW):</span>
+                            <span class="text-slate-400">Chapter 9 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Feb 22 (HW):</span>
+                            <span class="text-slate-400">Spring Test #2 Review Set (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 14 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 14: Feb 21 – Feb 27, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full font-mono">Spring Test #2 & Ch 10</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Feb 23 (Class):</span>
+                                <span class="text-slate-300">Sec 10.1-10.4 Permutations & Combinations Intro</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Combinatorics</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Feb 24 (HW):</span>
+                            <span class="text-slate-400">Sec 10.1-10.4 Exercises (~30 min).</span>
+                        </div>
+                        <div class="p-3.5 bg-emerald-950/40 border border-emerald-500/40 rounded-lg text-emerald-200">
+                            <span class="font-bold text-emerald-300"><i class="fa-solid fa-file-pen mr-1"></i> Thu, Feb 26 (Class): Spring In-Class Test #2 (Chapters 8–9)</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Feb 27 (HW):</span>
+                            <span class="text-slate-400">Test Corrections & Error Analysis (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Feb 28 (HW):</span>
+                            <span class="text-slate-400">Combinations & Permutations Practice (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Mar 1 (HW):</span>
+                            <span class="text-slate-400">Probability Models Prep (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 15 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 15: Feb 28 – Mar 6, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 10 Probability</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Tue, Mar 2 (Class):</span>
+                            <span class="text-slate-300">Sec 10.5-10.7 Independent Events, Conditional Probability & Simulation</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Mar 3 (HW):</span>
+                            <span class="text-slate-400">Sec 10.5-10.7 Probability Practice (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Mar 4 (Class):</span>
+                            <span class="text-slate-300">Chapter 10 Checkpoint & Probability Simulation Workshop</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Mar 5 (HW):</span>
+                            <span class="text-slate-400">Chapter 10 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Mar 6 (HW):</span>
+                            <span class="text-slate-400">Probability Mastery Set (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Mar 8 (HW):</span>
+                            <span class="text-slate-400">Sequences & Series Prep (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 16 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 16: Mar 7 – Mar 13, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 11 Sequences & Series</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Mar 9 (Class):</span>
+                                <span class="text-slate-300">Sec 11.1-11.4 Arithmetic & Geometric Sequences & Series</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Sequences & Series</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Mar 10 (HW):</span>
+                            <span class="text-slate-400">Sec 11.1-11.4 Practice Set (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Mar 11 (Class):</span>
+                            <span class="text-slate-300">Sec 11.5-11.8 Infinite Series & Binomial Theorem</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Mar 12 (HW):</span>
+                            <span class="text-slate-400">Chapter 11 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Mar 13 (HW):</span>
+                            <span class="text-slate-400">Spring Test #3 Prep Module (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Mar 15 (HW):</span>
+                            <span class="text-slate-400">Test #3 Final Practice Set (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 17 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 17: Mar 14 – Mar 20, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full font-mono">Spring Test #3 & Ch 12</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3.5 bg-emerald-950/40 border border-emerald-500/40 rounded-lg text-emerald-200">
+                            <span class="font-bold text-emerald-300"><i class="fa-solid fa-file-pen mr-1"></i> Tue, Mar 16 (Class): Spring In-Class Test #3 (Chapters 10–11)</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Mar 17 (HW):</span>
+                            <span class="text-slate-400">Test Error Analysis (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Mar 18 (Class):</span>
+                            <span class="text-slate-300">Sec 12.1-12.6 Statistics & Normal Distributions</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Mar 19 (HW):</span>
+                            <span class="text-slate-400">Chapter 12 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Mar 20 (HW):</span>
+                            <span class="text-slate-400">Statistics & Normal Curve Drills (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-indigo-950/40 border border-indigo-500/30 rounded-lg text-indigo-300 font-semibold">
+                            Spring Break: March 23 – April 5, 2027 (No Classes)
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Apr 5 (HW):</span>
+                            <span class="text-slate-400">Post-Spring Break Warm-up Problems (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 18 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 18: Apr 4 – Apr 10, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 13 Trigonometry</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Apr 6 (Class):</span>
+                                <span class="text-slate-300">Sec 13.1-13.3 Right-Triangle & Unit Circle Trigonometry</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Unit Circle</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Apr 7 (HW):</span>
+                            <span class="text-slate-400">Sec 13.1-13.3 Trig Ratios (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Apr 8 (Class):</span>
+                            <span class="text-slate-300">Sec 13.4-13.6 Graphing Trigonometric Functions</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Apr 9 (HW):</span>
+                            <span class="text-slate-400">Chapter 13 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Apr 10 (HW):</span>
+                            <span class="text-slate-400">Trig Graphs Practice Set (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Apr 12 (HW):</span>
+                            <span class="text-slate-400">Law of Sines & Cosines Prep (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 19 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 19: Apr 11 – Apr 17, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 14 Further Trig (Part 1)</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="font-semibold text-white">Tue, Apr 13 (Class):</span>
+                                <span class="text-slate-300">Sec 14.1-14.2 The Law of Sines & Law of Cosines</span>
+                            </div>
+                            <a href="https://www.khanacademy.org/math/algebra2" target="_blank" class="text-[11px] text-sky-400 hover:underline flex items-center space-x-1">
+                                <i class="fa-brands fa-youtube"></i> <span>Khan: Law of Sines/Cosines</span>
+                            </a>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Apr 14 (HW):</span>
+                            <span class="text-slate-400">Sec 14.1-14.2 Practice Set (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Apr 15 (Class):</span>
+                            <span class="text-slate-300">Sec 14.3 Fundamental Trigonometric Identities</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Apr 16 (HW):</span>
+                            <span class="text-slate-400">Sec 14.3 Identities Practice (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Apr 17 (HW):</span>
+                            <span class="text-slate-400">Trig Proofs Workshop (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Apr 19 (HW):</span>
+                            <span class="text-slate-400">Sum & Difference Identities Prep (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 20 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 20: Apr 18 – Apr 24, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Chapter 14 Further Trig (Part 2)</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Tue, Apr 20 (Class):</span>
+                            <span class="text-slate-300">Sec 14.4-14.5 Sum, Difference, Double-Angle & Half-Angle Identities</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Apr 21 (HW):</span>
+                            <span class="text-slate-400">Sec 14.4-14.5 Identities Practice (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Apr 22 (Class):</span>
+                            <span class="text-slate-300">Sec 14.6 Solving Trigonometric Equations & Chapter 14 Checkpoint</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Apr 23 (HW):</span>
+                            <span class="text-slate-400">Chapter 14 Checkpoint Assignment (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, Apr 24 (HW):</span>
+                            <span class="text-slate-400">Trig Equations Mastery Set (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, Apr 26 (HW):</span>
+                            <span class="text-slate-400">Final Exam Review Module 1 (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 21 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 21: Apr 25 – May 1, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full font-mono">Comprehensive Course Review (Part 1)</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Tue, Apr 27 (Class):</span>
+                            <span class="text-slate-300">Comprehensive Final Review (Linear, Systems, Matrices & Quadratics)</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, Apr 28 (HW):</span>
+                            <span class="text-slate-400">Final Review Set 1 (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, Apr 29 (Class):</span>
+                            <span class="text-slate-300">Comprehensive Final Review (Exponents, Logs, Polynomials & Rationals)</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, Apr 30 (HW):</span>
+                            <span class="text-slate-400">Final Review Set 2 (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, May 1 (HW):</span>
+                            <span class="text-slate-400">Practice Final Exam Section A (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, May 3 (HW):</span>
+                            <span class="text-slate-400">Section A Error Analysis (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 22 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 22: May 2 – May 8, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded-full font-mono">Comprehensive Course Review (Part 2)</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Tue, May 4 (Class):</span>
+                            <span class="text-slate-300">Comprehensive Final Review (Conics, Probability, Series & Trigonometry)</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, May 5 (HW):</span>
+                            <span class="text-slate-400">Final Review Set 3 (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800/80">
+                            <span class="font-semibold text-white">Thu, May 6 (Class):</span>
+                            <span class="text-slate-300">Final Exam Mock Simulation & Q&A Session</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Fri, May 7 (HW):</span>
+                            <span class="text-slate-400">Practice Final Exam Section B (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Sat, May 8 (HW):</span>
+                            <span class="text-slate-400">Master Formula Sheet Review (~30 min).</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Mon, May 10 (HW):</span>
+                            <span class="text-slate-400">Final Pre-Exam Check & Formula Review (~30 min).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 23 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                        <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wider">Week 23: May 9 – May 15, 2027</h3>
+                        <span class="text-xs px-2.5 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full font-mono">Final Exams & Course Conclusion</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3.5 bg-amber-950/40 border border-amber-500/40 rounded-lg text-amber-200">
+                            <span class="font-bold text-amber-300"><i class="fa-solid fa-award mr-1"></i> Tue, May 11 (Class): Final Exam Part 1 (In-Class Cumulative Assessment)</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/30 rounded-lg border border-slate-800/40">
+                            <span class="font-semibold text-slate-300">Wed, May 12 (HW):</span>
+                            <span class="text-slate-400">Final Exam Reflection & Wrap-up (~30 min).</span>
+                        </div>
+                        <div class="p-3.5 bg-sky-950/50 border border-sky-500/40 rounded-lg text-sky-200 font-semibold">
+                            <i class="fa-solid fa-flag-checkered mr-1 text-sky-400"></i> Thu, May 13 (Class): Final Exam Part 2 & Course Conclusion (Last Day of Class)
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-800/80 bg-slate-950 py-6 text-center text-xs text-slate-500">
+        Saint Peter the Rock Academy • Department of Mathematics • Algebra 2
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-sky-500 text-slate-950 text-xs font-semibold px-4 py-3 rounded-lg shadow-xl flex items-center space-x-2">
+        <i class="fa-solid fa-circle-info"></i>
+        <span id="toastText">Scrolling to section...</span>
+    </div>
+
+    <script>
+        // Smooth Scrolling function for top dropdown menu
+        function scrollToSection(sectionId) {
+            if (!sectionId) return;
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                const toast = document.getElementById('toast');
+                const toastText = document.getElementById('toastText');
+                toastText.innerText = `Navigated to ${sectionId.replace('section-', '').toUpperCase()}...`;
+                toast.classList.remove('hidden');
+
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 2000);
+            }
+        }
+
+        // Tab Switching for Fall and Spring Semesters
+        function switchSemester(semester) {
+            const fallDiv = document.getElementById('semester-fall');
+            const springDiv = document.getElementById('semester-spring');
+            const fallTab = document.getElementById('tab-fall');
+            const springTab = document.getElementById('tab-spring');
+
+            if (semester === 'fall') {
+                fallDiv.classList.remove('hidden');
+                springDiv.classList.add('hidden');
+                fallTab.classList.add('tab-active');
+                springTab.classList.remove('tab-active');
+                springTab.classList.add('text-slate-400');
+            } else {
+                springDiv.classList.remove('hidden');
+                fallDiv.classList.add('hidden');
+                springTab.classList.add('tab-active');
+                fallTab.classList.remove('tab-active');
+                fallTab.classList.add('text-slate-400');
+            }
+        }
+    </script>
+</body>
+</html>
