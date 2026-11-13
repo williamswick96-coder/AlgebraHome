@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Peter the Rock Academy — Algebra 2 Syllabus &amp; Course Portal</title>
+    <!-- MathJax 3 Configuration & Loader -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* ==========================================================================
+           TUFTE INFORMATION DESIGN TOKENS & TYPOGRAPHY
+           ========================================================================== */
+        :root {
+            --bg-paper: #fffff8;
+            --ink-primary: #111111;
+            --ink-secondary: #3f3f3c;
+            --ink-muted: #6c6b65;
+            --accent-crimson: #991b1b;
+            --accent-slate: #1e3a8a;
+            --accent-forest: #1f5132;
+            --accent-amber: #92400e;
+            --hairline: #dcdcd2;
+            --ghost-line: #b4b4aa;
+            --font-serif: "ET Book", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+            --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            background-color: var(--bg-paper);
+            color: var(--ink-primary);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-serif);
+            line-height: 1.66;
+            background-color: var(--bg-paper);
+            color: var(--ink-primary);
+        }
+
+        /* ==========================================================================
+           ASYMMETRIC TWO-COLUMN GRID (60% Main Measure / 4% Gutter / 36% Margin)
+           ========================================================================== */
+        .tufte-wrapper {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 2.75rem 2rem 5rem 2rem;
+        }
+
+        .tufte-row {
+            display: grid;
+            grid-template-columns: 60% 36%;
+            column-gap: 4%;
+            align-items: start;
+        }
+
+        .main-col {
+            min-width: 0;
+        }
+
+        .margin-col {
+            min-width: 0;
+            font-size: 0.875rem;
+            line-height: 1.54;
+            color: var(--ink-secondary);
+        }
+
+        /* ==========================================================================
+           HEADER & EPIGRAPH
+           ========================================================================== */
+        header.doc-header {
+            border-bottom: 1px solid var(--hairline);
+            padding-bottom: 1.65rem;
+            margin-bottom: 2.25rem;
+        }
+
+        .institution-kicker {
+            font-size: 0.78rem;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--accent-slate);
+            margin-bottom: 0.35rem;
+        }
+
+        h1.doc-title {
+            font-weight: normal;
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin: 0 0 0.5rem 0;
+            color: var(--ink-primary);
+        }
+
+        .doc-subtitle {
+            font-style: italic;
+            font-size: 1.08rem;
+            color: var(--ink-secondary);
+            margin: 0 0 1.15rem 0;
+        }
+
+        .meta-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.92rem;
+            color: var(--ink-secondary);
+        }
+
+        .meta-line strong {
+            font-weight: normal;
+            font-style: italic;
+            color: var(--ink-muted);
+        }
+
+        /* ==========================================================================
+           MARGIN SIDENOTES & FORMULA BLOCKS
+           ========================================================================== */
+        .sidenote-card {
+            margin-bottom: 1.25rem;
+            padding-left: 0.85rem;
+            border-left: 1px solid var(--hairline);
+        }
+
+        .sidenote-num {
+            font-size: 0.75rem;
+            vertical-align: super;
+            color: var(--accent-crimson);
+            margin-right: 0.25rem;
+        }
+
+        .sidenote-title {
+            font-style: italic;
+            color: var(--ink-primary);
+        }
+
+        .margin-formula {
+            margin: 0.65rem 0;
+            padding: 0.35rem 0;
+            border-top: 1px dotted var(--hairline);
+            border-bottom: 1px dotted var(--hairline);
+            text-align: center;
+            color: var(--ink-primary);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================================================
+           SECTION HEADINGS & PROSE
+           ========================================================================== */
+        section.syllabus-section {
+            margin-bottom: 2.4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        section.syllabus-section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2.section-heading {
+            font-weight: normal;
+            font-size: 1.45rem;
+            line-height: 1.3;
+            margin: 0 0 0.85rem 0;
+            color: var(--ink-primary);
+        }
+
+        .section-num {
+            color: var(--accent-crimson);
+            font-variant-numeric: oldstyle-nums;
+            margin-right: 0.4rem;
+        }
+
+        h3.subsection-heading {
+            font-weight: normal;
+            font-style: italic;
+            font-size: 1.12rem;
+            margin: 1.25rem 0 0.45rem 0;
+            color: var(--accent-slate);
+        }
+
+        p {
+            margin: 0 0 0.95rem 0;
+        }
+
+        a.tufte-link {
+            color: var(--accent-slate);
+            text-decoration: underline;
+            text-decoration-color: var(--hairline);
+            text-underline-offset: 3px;
+            transition: color 0.15s ease, text-decoration-color 0.15s ease;
+        }
+
+        a.tufte-link:hover {
+            color: var(--accent-crimson);
+            text-decoration-color: var(--accent-crimson);
+        }
+
+        /* ==========================================================================
+           TUFTE BOOKTABS TABLES (CALENDAR & PACING)
+           ========================================================================== */
+        table.tufte-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.25rem 0;
+            font-size: 0.92rem;
+            font-variant-numeric: oldstyle-nums;
+        }
+
+        table.tufte-table thead th {
+            font-weight: normal;
+            font-style: italic;
+            text-align: left;
+            color: var(--ink-secondary);
+            border-top: 1.5px solid var(--ink-primary);
+            border-bottom: 1px solid var(--ink-primary);
+            padding: 0.45rem 0.6rem;
+        }
+
+        table.tufte-table tbody td {
+            padding: 0.45rem 0.6rem;
+            border-bottom: 1px solid var(--hairline);
+            vertical-align: top;
+        }
+
+        table.tufte-table tbody tr:last-child td {
+            border-bottom: 1.5px solid var(--ink-primary);
+        }
+
+        .date-highlight {
+            color: var(--accent-crimson);
+            font-weight: normal;
+        }
+
+        /* ==========================================================================
+           SEMESTER FILTER TABS & JUMP SELECTOR (HAIRLINE CONTROLS)
+           ========================================================================== */
+        .schedule-controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .semester-tabs {
+            display: flex;
+            gap: 1.25rem;
+            align-items: baseline;
+        }
+
+        .tufte-tab-btn {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            background: transparent;
+            border: none;
+            border-bottom: 1.5px solid transparent;
+            padding: 0.15rem 0.1rem;
+            color: var(--ink-muted);
+            cursor: pointer;
+            transition: color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .tufte-tab-btn:hover {
+            color: var(--ink-primary);
+        }
+
+        .tufte-tab-btn.active {
+            color: var(--accent-crimson);
+            border-bottom-color: var(--accent-crimson);
+        }
+
+        .chapter-jump-wrap {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            font-size: 0.88rem;
+            color: var(--ink-muted);
+        }
+
+        select.tufte-select {
+            font-family: var(--font-serif);
+            font-size: 0.88rem;
+            color: var(--ink-primary);
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #777770;
+            padding: 0.1rem 0.35rem;
+            outline: none;
+            cursor: pointer;
+        }
+
+        select.tufte-select:focus {
+            border-bottom-color: var(--accent-crimson);
+        }
+
+        /* ==========================================================================
+           WEEKLY SCHEDULE ENTRIES (TUFTIAN SYLLABUS LISTS)
+           ========================================================================== */
+        .week-block {
+            margin-bottom: 1.85rem;
+            padding-bottom: 1.35rem;
+            border-bottom: 1px dotted var(--hairline);
+        }
+
+        .week-block:last-child {
+            border-bottom: none;
+        }
+
+        .week-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.65rem;
+        }
+
+        .week-title {
+            font-size: 1.06rem;
+            font-weight: normal;
+            color: var(--ink-primary);
+            margin: 0;
+        }
+
+        .week-chapter-tag {
+            font-size: 0.84rem;
+            font-style: italic;
+            color: var(--accent-slate);
+        }
+
+        .week-chapter-tag.break-tag {
+            color: var(--accent-amber);
+        }
+
+        .week-chapter-tag.exam-tag {
+            color: var(--accent-crimson);
+        }
+
+        dl.daily-agenda {
+            margin: 0;
+            padding-left: 0.85rem;
+            border-left: 1.5px solid var(--hairline);
+        }
+
+        .agenda-item {
+            margin-bottom: 0.48rem;
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+
+        .agenda-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .day-label {
+            font-style: italic;
+            color: var(--ink-primary);
+            margin-right: 0.3rem;
+        }
+
+        .day-label.class-day {
+            color: var(--accent-slate);
+        }
+
+        .day-label.exam-day {
+            color: var(--accent-crimson);
+        }
+
+        .day-label.holiday-day {
+            color: var(--accent-amber);
+        }
+
+        .hw-note {
+            color: var(--ink-secondary);
+        }
+
+        .checkpoint-inline {
+            font-style: italic;
+            color: var(--accent-forest);
+        }
+
+        /* Small Multiples Pacing Sparkline Bar */
+        .pacing-chart {
+            margin-top: 0.65rem;
+        }
+
+        /* ==========================================================================
+           RESPONSIVE MOBILE COLLAPSE (< 900px)
+           ========================================================================== */
+        .mobile-sidenote-toggle {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .tufte-wrapper {
+                padding: 1.75rem 1.25rem 3.5rem 1.25rem;
+            }
+
+            .tufte-row {
+                display: block;
+            }
+
+            .margin-col {
+                margin-top: 0.75rem;
+            }
+
+            .mobile-sidenote-toggle {
+                display: inline-block;
+                font-family: var(--font-serif);
+                font-size: 0.84rem;
+                font-style: italic;
+                color: var(--accent-slate);
+                background: transparent;
+                border: none;
+                padding: 0.15rem 0;
+                margin-top: 0.25rem;
+                cursor: pointer;
+                text-decoration: underline;
+                text-decoration-color: var(--hairline);
+                text-underline-offset: 3px;
+            }
+
+            .sidenote-collapsible {
+                display: none;
+                margin-top: 0.5rem;
+                padding: 0.65rem 0.85rem;
+                border-left: 1.5px solid var(--accent-slate);
+                background-color: rgba(220, 220, 210, 0.16);
+            }
+
+            .sidenote-collapsible.open {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="tufte-wrapper">
+
+    <!-- ======================================================================
+         INSTITUTIONAL HEADER & EPIGRAPH
+         ====================================================================== -->
+    <header class="doc-header tufte-row">
+        <div class="main-col">
+            <div class="institution-kicker">Saint Peter the Rock Academy &mdash; Mathematics Department</div>
+            <h1 class="doc-title">Algebra 2: Course Syllabus &amp; Full-Year Pacing</h1>
+            <p class="doc-subtitle">
+                A structured, year-long sequence covering Holt Algebra 2 (Chapters 1&ndash;14), pairing twice-weekly seminar instruction with disciplined daily problem sets.
+            </p>
+            <div class="meta-line">
+                <span><strong>Instructor:</strong> Dr. William A. Swick</span>
+                <span><strong>Text:</strong> <em>Holt Algebra 2</em> (Holt, Rinehart &amp; Winston)</span>
+                <span><strong>Term:</strong> November 2026 &ndash; May 2027</span>
+            </div>
+        </div>
+
+        <aside class="margin-col">
+            <div class="sidenote-card">
+                <span class="sidenote-title">Foundational Identities.</span> Students should keep these three algebraic invariants at hand throughout the year:
+                <div class="margin-formula">
+                    $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+                </div>
+                <div class="margin-formula">
+                    $$a^x \cdot a^y = a^{x+y} \qquad \log_b(xy) = \log_b(x) + \log_b(y)$$
+                </div>
+            </div>
+        </aside>
+    </header>
+
+    <main>
+
+        <!-- ==================================================================
+             SECTION I: COURSE STRUCTURE & SUBMISSION PROTOCOL
+             ================================================================== -->
+        <section class="syllabus-section tufte-row" id="sec-overview">
+            <div class="main-col">
+                <h2 class="section-heading">
+                    <span class="section-num">I.</span>Course Structure &amp; Homework Protocol
+                </h2>
+                <p>
+                    Welcome to Algebra 2 at Saint Peter the Rock Academy. The curriculum spans Chapters 1 through 14 of <em>Holt Algebra 2</em> with tailored pacing: one week each for foundational review chapters (Chapters 1, 2, and 4; Chapter 3 spans two weeks across Thanksgiving), and two weeks each for core Algebra 2 chapters (Chapters 5 through 14).
+                </p>
+
+                <h3 class="subsection-heading">Weekly Rhythm &amp; Instruction</h3>
+                <p>
+                    In-class instruction convenes twice weekly every <strong>Tuesday and Thursday</strong>. Students are expected to bring their textbook, maintain an organized derivation notebook, and participate actively during worked demonstrations. Between class meetings, short daily problem sets (~30 minutes) are scheduled for <strong>Monday, Wednesday, Friday, and Saturday</strong>.
+                </p>
+
+                <h3 class="subsection-heading">Assessments &amp; Grade Verification Tokens</h3>
+                <p>
+                    Mastery is evaluated through chapter-end <em>Checkpoint Challenge Assignments</em>, two in-class examinations during the Fall Semester, and three in-class examinations plus a cumulative two-part Final Exam during the Spring Semester. For digital practice modules, complete all assigned problems for the day, copy the generated <code>MATH-GRADE::...</code> verification token, and paste it directly into your JupiterEd assignment submission box.
+                </p>
+
+                <button type="button" class="mobile-sidenote-toggle" onclick="toggleNote('note-1')">&#9656; Note 1: Daily 30-Minute Discipline</button>
+            </div>
+
+            <aside class="margin-col">
+                <div class="sidenote-card sidenote-collapsible" id="note-1">
+                    <span class="sidenote-num">1</span>
+                    <span class="sidenote-title">Daily 30-minute discipline.</span> Consistent four-day-a-week practice (M, W, F, Sa) prevents cognitive overload before Tuesday and Thursday seminars. Never batch all four homework sets into a single evening.
+                </div>
+                <div class="sidenote-card">
+                    <span class="sidenote-num">2</span>
+                    <span class="sidenote-title">Submitting digital tokens.</span> Upon finishing an interactive homework module, copy the entire base64 token string without truncating characters and submit via JupiterEd.
+                </div>
+            </aside>
+        </section>
+
+        <!-- ==================================================================
+             SECTION II: KEY ACADEMIC DATES & PACING OVERVIEW
+             ================================================================== -->
+        <section class="syllabus-section tufte-row" id="sec-dates">
+            <div class="main-col">
+                <h2 class="section-heading">
+                    <span class="section-num">II.</span>Key Academic Dates &amp; Pacing Overview
+                </h2>
+                <p>
+                    The academic calendar below governs all in-class sessions, holiday recesses, and major semester examinations from November 2026 through May 2027.
+                </p>
+
+                <table class="tufte-table" aria-label="Key Academic Dates for Algebra 2">
+                    <thead>
+                        <tr>
+                            <th style="width: 34%;">Milestone</th>
+                            <th style="width: 34%;">Date(s)</th>
+                            <th style="width: 32%;">Curriculum Scope</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Course Commencement</td>
+                            <td class="date-highlight">Tuesday, Nov 10, 2026</td>
+                            <td>Chapter 1 (Sections 1.1&ndash;1.3)</td>
+                        </tr>
+                        <tr>
+                            <td>Thanksgiving Recess</td>
+                            <td>Thursday, Nov 26, 2026</td>
+                            <td>No Class (Ch. 3 Split Pacing)</td>
+                        </tr>
+                        <tr>
+                            <td>Fall In-Class Exams</td>
+                            <td>Dec 10 &amp; Dec 15, 2026</td>
+                            <td>Exam I (Ch. 1&ndash;3) &amp; Exam II (Ch. 4&ndash;5)</td>
+                        </tr>
+                        <tr>
+                            <td>Winter Recess</td>
+                            <td>Dec 17, 2026 &ndash; Jan 5, 2027</td>
+                            <td>Classes Resume Thu, Jan 7, 2027</td>
+                        </tr>
+                        <tr>
+                            <td>Spring Recess</td>
+                            <td>Mar 23 &ndash; Apr 6, 2027</td>
+                            <td>Classes Resume Thu, Apr 8, 2027</td>
+                        </tr>
+                        <tr>
+                            <td>Final Class &amp; Final Exam</td>
+                            <td class="date-highlight">May 11 &amp; May 13, 2027</td>
+                            <td>Cumulative 2-Part Final Exam</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button type="button" class="mobile-sidenote-toggle" onclick="toggleNote('note-pacing')">&#9656; Note 3: Chapter Pacing Distribution</button>
+            </div>
+
+            <aside class="margin-col">
+                <div class="sidenote-card sidenote-collapsible" id="note-pacing">
+                    <span class="sidenote-num">3</span>
+                    <span class="sidenote-title">Curriculum pacing distribution.</span> Chapters 1, 2, and 4 move at an accelerated one-week review pace; Chapters 5&ndash;14 receive two full weeks each to develop depth in quadratics, polynomials, logarithms, conics, and trigonometry.
+                    <div class="pacing-chart" id="pacing-sparkline"></div>
+                </div>
+            </aside>
+        </section>
+
+        <!-- ==================================================================
+             SECTION III: FULL-YEAR WEEKLY SCHEDULE
+             ================================================================== -->
+        <section class="syllabus-section" id="sec-schedule">
+            <div class="tufte-row" style="margin-bottom: 1.25rem;">
+                <div class="main-col">
+                    <h2 class="section-heading">
+                        <span class="section-num">III.</span>Full-Year Course Schedule
+                    </h2>
+                    <p>
+                        Select a semester view or jump directly to any week below. Each week pairs Tuesday/Thursday seminar topics with Monday, Wednesday, Friday, and Saturday homework assignments.
+                    </p>
+
+                    <div class="schedule-controls">
+                        <div class="semester-tabs" role="tablist" aria-label="Semester schedule filter">
+                            <button type="button" class="tufte-tab-btn active" id="tab-all" onclick="filterSchedule('all')">Full Year (Weeks 1&ndash;24)</button>
+                            <button type="button" class="tufte-tab-btn" id="tab-fall" onclick="filterSchedule('fall')">Fall 2026 (Ch. 1&ndash;5)</button>
+                            <button type="button" class="tufte-tab-btn" id="tab-spring" onclick="filterSchedule('spring')">Spring 2027 (Ch. 6&ndash;14)</button>
+                        </div>
+
+                        <div class="chapter-jump-wrap">
+                            <label for="week-jump-select">Jump to:</label>
+                            <select id="week-jump-select" class="tufte-select" onchange="jumpToWeek(this.value)">
+                                <option value="">Select chapter or week&hellip;</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="margin-col">
+                    <div class="sidenote-card">
+                        <span class="sidenote-num">4</span>
+                        <span class="sidenote-title">Supplemental video lectures.</span> External Khan Academy links are provided alongside select seminars for students seeking additional visual reinforcement of algebraic proofs.
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Dynamic Tufte Two-Column Weekly Entries -->
+            <div id="schedule-container"></div>
+        </section>
+
+    </main>
+</div>
+
+<script>
+    /* ==========================================================================
+       COMPLETE 24-WEEK ALGEBRA 2 CURRICULUM DATA (CHAPTERS 1–14)
+       ========================================================================== */
+    const scheduleData = [
+        // ==================== FALL SEMESTER 2026 ====================
+        {
+            id: "week-1",
+            semester: "fall",
+            weekLabel: "Week 1: Nov 8 – Nov 14, 2026",
+            chapterTag: "Chapter 1 Review (1 Week)",
+            tagClass: "",
+            sidenote: "Chapter 1 establishes linear modeling, slope-intercept geometry, scatter-plot regression, and compound/absolute-value inequalities.",
+            link: { text: "Khan Academy: Linear Equations & Inequalities", url: "https://www.khanacademy.org/math/algebra" },
+            days: [
+                { day: "Tue, Nov 10 (Class)", type: "class", text: "Section 1.1: Tables & Graphs, Section 1.2: Slopes & Intercepts, Section 1.3: Linear Equations." },
+                { day: "Wed, Nov 11 (HW)", type: "hw", text: "Holt Alg 2 Section 1.1 & 1.2 Drills (~30 min)." },
+                { day: "Thu, Nov 12 (Class)", type: "class", text: "Section 1.4: Direct Variation, Section 1.5: Scatter Plots, Section 1.6–1.8: Inequalities & Absolute Value.", checkpoint: "Chapter 1 Checkpoint" },
+                { day: "Fri, Nov 13 (HW)", type: "hw", text: "Holt Alg 2 Section 1.3 & 1.4 Practice Set (~30 min)." },
+                { day: "Sat, Nov 14 (HW)", type: "hw", text: "Holt Alg 2 Section 1.5 & 1.6 Exercises (~30 min)." },
+                { day: "Mon, Nov 16 (HW)", type: "hw", text: "Chapter 1 Review & Checkpoint Set (~30 min)." }
+            ]
+        },
+        {
+            id: "week-2",
+            semester: "fall",
+            weekLabel: "Week 2: Nov 15 – Nov 21, 2026",
+            chapterTag: "Chapter 2 Review (1 Week)",
+            tagClass: "",
+            sidenote: "Focus closely on function notation $f(x)$, domain/range restrictions, inverse relations, and rigid vs. non-rigid graph transformations.",
+            link: { text: "Khan Academy: Functions & Transformations", url: "https://www.khanacademy.org/math/algebra2" },
+            days: [
+                { day: "Tue, Nov 17 (Class)", type: "class", text: "Section 2.1: Operations with Numbers, Section 2.2: Exponents, Section 2.3: Introduction to Functions." },
+                { day: "Wed, Nov 18 (HW)", type: "hw", text: "Holt Alg 2 Section 2.1 & 2.2 Exponent Drills (~30 min)." },
+                { day: "Thu, Nov 19 (Class)", type: "class", text: "Section 2.4: Function Operations, Section 2.5: Inverses, Section 2.6: Transformations.", checkpoint: "Chapter 2 Checkpoint" },
+                { day: "Fri, Nov 20 (HW)", type: "hw", text: "Holt Alg 2 Section 2.3 & 2.4 Practice Set (~30 min)." },
+                { day: "Sat, Nov 21 (HW)", type: "hw", text: "Holt Alg 2 Section 2.5 & 2.6 Exercises (~30 min)." },
+                { day: "Mon, Nov 23 (HW)", type: "hw", text: "Chapter 2 Review & Checkpoint Set (~30 min)." }
+            ]
+        },
+        {
+            id: "week-3",
+            semester: "fall",
+            weekLabel: "Week 3: Nov 22 – Nov 28, 2026",
+            chapterTag: "Chapter 3 (Part 1 — Thanksgiving Week)",
+            tagClass: "break-tag",
+            sidenote: "Thanksgiving recess falls on Thursday, Nov 26. Chapter 3 is split across Weeks 3 and 4 to preserve full instructional coverage.",
+            days: [
+                { day: "Tue, Nov 24 (Class)", type: "class", text: "Section 3.1: Systems by Graphing & Substitution; Section 3.2: Elimination." },
+                { day: "Thu, Nov 26 (Holiday)", type: "holiday", text: "No Class — Thanksgiving Break." },
+                { day: "Mon, Nov 30 (HW)", type: "hw", text: "Holt Alg 2 Section 3.1 & 3.2 Systems Practice (~30 min)." }
+            ]
+        },
+        {
+            id: "week-4",
+            semester: "fall",
+            weekLabel: "Week 4: Nov 29 – Dec 5, 2026",
+            chapterTag: "Chapter 3 (Part 2 — Linear Systems & Programming)",
+            tagClass: "",
+            sidenote: "Three-variable linear systems $(x, y, z)$ require disciplined row elimination; keep every intermediate equation numbered clearly.",
+            days: [
+                { day: "Tue, Dec 1 (Class)", type: "class", text: "Section 3.3: Systems in Three Variables; Section 3.4: Linear Inequalities in Two Variables." },
+                { day: "Wed, Dec 2 (HW)", type: "hw", text: "Holt Alg 2 Section 3.3 Three-Variable Drills (~30 min)." },
+                { day: "Thu, Dec 3 (Class)", type: "class", text: "Section 3.5: Systems of Inequalities; Section 3.6: Linear Programming.", checkpoint: "Chapter 3 Checkpoint" },
+                { day: "Fri, Dec 4 (HW)", type: "hw", text: "Holt Alg 2 Section 3.4 & 3.5 Practice Set (~30 min)." },
+                { day: "Sat, Dec 5 (HW)", type: "hw", text: "Holt Alg 2 Section 3.6 Optimization Set (~30 min)." },
+                { day: "Mon, Dec 7 (HW)", type: "hw", text: "Chapter 3 Review & Matrix Prep Set (~30 min)." }
+            ]
+        },
+        {
+            id: "week-5",
+            semester: "fall",
+            weekLabel: "Week 5: Dec 6 – Dec 12, 2026",
+            chapterTag: "Chapter 4 Matrices & Fall Exam I",
+            tagClass: "exam-tag",
+            sidenote: "Exam I covers Chapters 1 through 3. Matrix multiplication is non-commutative ($AB \\neq BA$ in general); verify dimensions $(m \\times n)(n \\times p)$ first.",
+            days: [
+                { day: "Tue, Dec 8 (Class)", type: "class", text: "Section 4.1–4.3: Matrix Operations, Multiplication, Determinants & Cramer's Rule." },
+                { day: "Wed, Dec 9 (HW)", type: "hw", text: "Exam I Cumulative Practice & Matrix Drills (~30 min)." },
+                { day: "Thu, Dec 10 (Exam)", type: "exam", text: "In-Class Exam I (Chapters 1–3) + Section 4.4–4.5: Inverse Matrices & Augmented Systems.", checkpoint: "Chapter 4 Checkpoint" },
+                { day: "Fri, Dec 11 (HW)", type: "hw", text: "Holt Alg 2 Section 4.3 & 4.4 Determinant/Inverse Exercises (~30 min)." },
+                { day: "Sat, Dec 12 (HW)", type: "hw", text: "Holt Alg 2 Section 4.5 Matrix Equations Set (~30 min)." },
+                { day: "Mon, Dec 14 (HW)", type: "hw", text: "Chapter 4 Review & Quadratic Readiness (~30 min)." }
+            ]
+        },
+        {
+            id: "week-6",
+            semester: "fall",
+            weekLabel: "Week 6: Dec 13 – Dec 19, 2026",
+            chapterTag: "Chapter 5 Quadratics (Part 1) & Fall Exam II",
+            tagClass: "exam-tag",
+            sidenote: "Winter Recess begins Dec 17. Complete the holiday maintenance packet lightly over break so factoring and completing the square stay sharp.",
+            days: [
+                { day: "Tue, Dec 15 (Exam)", type: "exam", text: "In-Class Exam II (Chapter 4) + Section 5.1–5.3: Graphing Quadratics, Factoring & Completing the Square." },
+                { day: "Wed, Dec 16 (HW)", type: "hw", text: "Holt Alg 2 Section 5.1–5.3 Factoring & Vertex Form Set (~30 min)." },
+                { day: "Dec 17 – Jan 5", type: "holiday", text: "Winter Recess — No Regular Classes (Optional Winter Review Packet)." }
+            ]
+        },
+
+        // ==================== SPRING SEMESTER 2027 ====================
+        {
+            id: "week-7",
+            semester: "spring",
+            weekLabel: "Week 7: Jan 6 – Jan 12, 2027",
+            chapterTag: "Chapter 5 Quadratics (Part 2 — Complex Numbers)",
+            tagClass: "",
+            sidenote: "The discriminant $\\Delta = b^2 - 4ac$ classifies roots immediately: $\\Delta > 0$ (two real), $\\Delta = 0$ (one repeated real), $\\Delta < 0$ (two complex conjugates $a \\pm bi$).",
+            link: { text: "Khan Academy: Quadratic Formula & Complex Numbers", url: "https://www.khanacademy.org/math/algebra2" },
+            days: [
+                { day: "Thu, Jan 7 (Class)", type: "class", text: "Section 5.4: The Quadratic Formula & Discriminant; Section 5.5: Complex Numbers ($i^2 = -1$); Section 5.6: Quadratic Inequalities.", checkpoint: "Chapter 5 Checkpoint" },
+                { day: "Fri, Jan 8 (HW)", type: "hw", text: "Holt Alg 2 Section 5.4 Quadratic Formula Drills (~30 min)." },
+                { day: "Sat, Jan 9 (HW)", type: "hw", text: "Holt Alg 2 Section 5.5 Complex Arithmetic Set (~30 min)." },
+                { day: "Mon, Jan 11 (HW)", type: "hw", text: "Chapter 5 Review & Checkpoint Set (~30 min)." }
+            ]
+        },
+        {
+            id: "week-8",
+            semester: "spring",
+            weekLabel: "Week 8: Jan 13 – Jan 19, 2027",
+            chapterTag: "Chapter 6 Polynomial Functions (Week 1 of 2)",
+            tagClass: "",
+            sidenote: "End behavior of $P(x) = a_n x^n + \\cdots + a_0$ depends solely on the degree $n$ (even/odd) and leading coefficient sign $a_n$.",
+            days: [
+                { day: "Tue, Jan 12 (Class)", type: "class", text: "Section 6.1: Polynomial Functions & End Behavior; Section 6.2: Multiplying & Factoring Polynomials." },
+                { day: "Wed, Jan 13 (HW)", type: "hw", text: "Holt Alg 2 Section 6.1 & 6.2 Polynomial Operations (~30 min)." },
+                { day: "Thu, Jan 14 (Class)", type: "class", text: "Section 6.3: Dividing Polynomials (Long & Synthetic Division); Section 6.4: Factoring Sum/Difference of Cubes." },
+                { day: "Fri, Jan 15 (HW)", type: "hw", text: "Holt Alg 2 Section 6.3 Synthetic Division Drills (~30 min)." },
+                { day: "Sat, Jan 16 (HW)", type: "hw", text: "Holt Alg 2 Section 6.4 Advanced Factoring Set (~30 min)." },
+                { day: "Mon, Jan 18 (HW)", type: "hw", text: "Mid-Chapter 6 Practice Quiz (~30 min)." }
+            ]
+        },
+        {
+            id: "week-9",
+            semester: "spring",
+            weekLabel: "Week 9: Jan 20 – Jan 26, 2027",
+            chapterTag: "Chapter 6 Polynomial Functions (Week 2 of 2)",
+            tagClass: "",
+            sidenote: "By the Rational Root Theorem, every rational zero $p/q$ of an integer polynomial has $p \\mid a_0$ and $q \\mid a_n$.",
+            days: [
+                { day: "Tue, Jan 19 (Class)", type: "class", text: "Section 6.5: Finding Real Roots (Rational Root Theorem); Section 6.6: Fundamental Theorem of Algebra." },
+                { day: "Wed, Jan 20 (HW)", type: "hw", text: "Holt Alg 2 Section 6.5 Rational Root Exercises (~30 min)." },
+                { day: "Thu, Jan 21 (Class)", type: "class", text: "Section 6.7: Investigating Graphs of Polynomial Functions; Section 6.8: Transforming Polynomials.", checkpoint: "Chapter 6 Checkpoint" },
+                { day: "Fri, Jan 22 (HW)", type: "hw", text: "Holt Alg 2 Section 6.6 Complex Zeros Set (~30 min)." },
+                { day: "Sat, Jan 23 (HW)", type: "hw", text: "Holt Alg 2 Section 6.7 & 6.8 Graphing Practice (~30 min)." },
+                { day: "Mon, Jan 25 (HW)", type: "hw", text: "Chapter 6 Review & Checkpoint Set (~30 min)." }
+            ]
+        },
+        {
+            id: "week-10",
+            semester: "spring",
+            weekLabel: "Week 10: Jan 27 – Feb 2, 2027",
+            chapterTag: "Chapter 7 Exponential & Logarithmic Functions (Week 1 of 2)",
+            tagClass: "",
+            sidenote: "Logarithms are inverse exponential functions: $y = \\log_b(x) \\iff b^y = x$ for $b > 0, b \\neq 1$, and $x > 0$.",
+            link: { text: "Khan Academy: Logarithms & Exponential Models", url: "https://www.khanacademy.org/math/algebra2" },
+            days: [
+                { day: "Tue, Jan 26 (Class)", type: "class", text: "Section 7.1: Exponential Functions, Growth & Decay; Section 7.2: Inverses of Relations & Functions." },
+                { day: "Wed, Jan 27 (HW)", type: "hw", text: "Holt Alg 2 Section 7.1 Growth & Decay Models (~30 min)." },
+                { day: "Thu, Jan 28 (Class)", type: "class", text: "Section 7.3: Logarithmic Functions; Section 7.4: Properties of Logarithms (Product, Quotient, Power)." },
+                { day: "Fri, Jan 29 (HW)", type: "hw", text: "Holt Alg 2 Section 7.3 Evaluating Logs Drills (~30 min)." },
+                { day: "Sat, Jan 30 (HW)", type: "hw", text: "Holt Alg 2 Section 7.4 Expanding & Condensing Logs (~30 min)." },
+                { day: "Mon, Feb 1 (HW)", type: "hw", text: "Mid-Chapter 7 Logarithm Properties Set (~30 min)." }
+            ]
+        },
+        {
+            id: "week-11",
+            semester: "spring",
+            weekLabel: "Week 11: Feb 3 – Feb 9, 2027",
+            chapterTag: "Chapter 7 Exponential & Logarithmic Functions (Week 2 of 2)",
+            tagClass: "",
+            sidenote: "Always check logarithmic equation solutions against the domain condition: the argument inside any logarithm must be strictly positive.",
+            days: [
+                { day: "Tue, Feb 2 (Class)", type: "class", text: "Section 7.5: Exponential & Logarithmic Equations and Inequalities; Section 7.6: The Natural Base $e$." },
+                { day: "Wed, Feb 3 (HW)", type: "hw", text: "Holt Alg 2 Section 7.5 Equation Solving Drills (~30 min)." },
+                { day: "Thu, Feb 4 (Class)", type: "class", text: "Section 7.7: Transforming Exponential & Logarithmic Functions; Section 7.8: Curve Fitting.", checkpoint: "Chapter 7 Checkpoint" },
+                { day: "Fri, Feb 5 (HW)", type: "hw", text: "Holt Alg 2 Section 7.6 Natural Log & Continuous Compounding (~30 min)." },
+                { day: "Sat, Feb 6 (HW)", type: "hw", text: "Holt Alg 2 Section 7.7 & 7.8 Practice Set (~30 min)." },
+                { day: "Mon, Feb 8 (HW)", type: "hw", text: "Chapter 7 Review & Spring Exam I Prep (~30 min)." }
+            ]
+        },
+        {
+            id: "week-12",
+            semester: "spring",
+            weekLabel: "Week 12: Feb 10 – Feb 16, 2027",
+            chapterTag: "Chapter 8 Rational & Radical Functions (Week 1 of 2) & Spring Exam I",
+            tagClass: "exam-tag",
+            sidenote: "Spring Exam I covers Chapters 5 through 7. For rational expressions, factor numerators and denominators completely before canceling common factors.",
+            days: [
+                { day: "Tue, Feb 9 (Exam)", type: "exam", text: "Spring In-Class Exam I (Chapters 5–7) + Section 8.1: Variation Functions." },
+                { day: "Wed, Feb 10 (HW)", type: "hw", text: "Holt Alg 2 Section 8.1 Joint & Combined Variation (~30 min)." },
+                { day: "Thu, Feb 11 (Class)", type: "class", text: "Section 8.2: Multiplying & Dividing Rational Expressions; Section 8.3: Adding & Subtracting Rational Expressions." },
+                { day: "Fri, Feb 12 (HW)", type: "hw", text: "Holt Alg 2 Section 8.2 Rational Simplification (~30 min)." },
+                { day: "Sat, Feb 13 (HW)", type: "hw", text: "Holt Alg 2 Section 8.3 LCD & Rational Sums (~30 min)." },
+                { day: "Mon, Feb 15 (HW)", type: "hw", text: "Complex Fractions Practice Set (~30 min)." }
+            ]
+        },
+        {
+            id: "week-13",
+            semester: "spring",
+            weekLabel: "Week 13: Feb 17 – Feb 23, 2027",
+            chapterTag: "Chapter 8 Rational & Radical Functions (Week 2 of 2)",
+            tagClass: "",
+            sidenote: "Distinguish removable discontinuities (holes where a factor cancels) from vertical asymptotes (zeros of the simplified denominator).",
+            days: [
+                { day: "Tue, Feb 16 (Class)", type: "class", text: "Section 8.4: Rational Functions, Asymptotes & Holes; Section 8.5: Solving Rational Equations & Inequalities." },
+                { day: "Wed, Feb 17 (HW)", type: "hw", text: "Holt Alg 2 Section 8.4 Graphing Rational Functions (~30 min)." },
+                { day: "Thu, Feb 18 (Class)", type: "class", text: "Section 8.6: Radical Expressions & Rational Exponents; Section 8.7–8.8: Radical Functions & Equations.", checkpoint: "Chapter 8 Checkpoint" },
+                { day: "Fri, Feb 19 (HW)", type: "hw", text: "Holt Alg 2 Section 8.5 Rational Equations & Extraneous Roots (~30 min)." },
+                { day: "Sat, Feb 20 (HW)", type: "hw", text: "Holt Alg 2 Section 8.6–8.8 Radical Equations Set (~30 min)." },
+                { day: "Mon, Feb 22 (HW)", type: "hw", text: "Chapter 8 Review & Checkpoint Set (~30 min)." }
+            ]
+        },
+        {
+            id: "week-14",
+            semester: "spring",
+            weekLabel: "Week 14: Feb 24 – Mar 2, 2027",
+            chapterTag: "Chapter 9 Properties & Attributes of Functions (Week 1 of 2)",
+            tagClass: "",
+            sidenote: "Piecewise functions require evaluating which domain interval contains $x$ before substituting into the corresponding branch formula.",
+            days: [
+                { day: "Tue, Feb 23 (Class)", type: "class", text: "Section 9.1: Multiple Representations of Functions; Section 9.2: Piecewise & Step Functions." },
+                { day: "Wed, Feb 24 (HW)", type: "hw", text: "Holt Alg 2 Section 9.1 & 9.2 Piecewise Graphing (~30 min)." },
+                { day: "Thu, Feb 25 (Class)", type: "class", text: "Section 9.3: Transforming Functions; Section 9.4: Operations & Composition of Functions $(f \\circ g)(x)$." },
+                { day: "Fri, Feb 26 (HW)", type: "hw", text: "Holt Alg 2 Section 9.3 Transformation Analysis (~30 min)." },
+                { day: "Sat, Feb 27 (HW)", type: "hw", text: "Holt Alg 2 Section 9.4 Function Composition Drills (~30 min)." },
+                { day: "Mon, Mar 1 (HW)", type: "hw", text: "Mid-Chapter 9 Composition & Domain Set (~30 min)." }
+            ]
+        },
+        {
+            id: "week-15",
+            semester: "spring",
+            weekLabel: "Week 15: Mar 3 – Mar 9, 2027",
+            chapterTag: "Chapter 9 Properties & Attributes of Functions (Week 2 of 2)",
+            tagClass: "",
+            sidenote: "Two functions $f$ and $g$ are inverses if and only if $(f \\circ g)(x) = x$ and $(g \\circ f)(x) = x$ on their respective domains.",
+            days: [
+                { day: "Tue, Mar 2 (Class)", type: "class", text: "Section 9.5: Functions and Their Inverses (Horizontal Line Test & Algebraic Inversion)." },
+                { day: "Wed, Mar 3 (HW)", type: "hw", text: "Holt Alg 2 Section 9.5 Inverse Verification Drills (~30 min)." },
+                { day: "Thu, Mar 4 (Class)", type: "class", text: "Section 9.6: Modeling Real-World Data & Selecting Function Families.", checkpoint: "Chapter 9 Checkpoint" },
+                { day: "Fri, Mar 5 (HW)", type: "hw", text: "Holt Alg 2 Section 9.6 Regression & Modeling Set (~30 min)." },
+                { day: "Sat, Mar 6 (HW)", type: "hw", text: "Chapter 9 Review Exercises (~30 min)." },
+                { day: "Mon, Mar 8 (HW)", type: "hw", text: "Spring Exam II Cumulative Review (Chapters 8–9) (~30 min)." }
+            ]
+        },
+        {
+            id: "week-16",
+            semester: "spring",
+            weekLabel: "Week 16: Mar 10 – Mar 16, 2027",
+            chapterTag: "Chapter 10 Conic Sections (Week 1 of 2) & Spring Exam II",
+            tagClass: "exam-tag",
+            sidenote: "Spring Exam II covers Chapters 8 and 9. Conic sections arise from intersecting a plane with a double-napped right circular cone.",
+            days: [
+                { day: "Tue, Mar 9 (Exam)", type: "exam", text: "Spring In-Class Exam II (Chapters 8–9) + Section 10.1: Introduction to Conic Sections." },
+                { day: "Wed, Mar 10 (HW)", type: "hw", text: "Holt Alg 2 Section 10.1 Distance & Midpoint Review (~30 min)." },
+                { day: "Thu, Mar 11 (Class)", type: "class", text: "Section 10.2: Circles $(x-h)^2 + (y-k)^2 = r^2$; Section 10.3: Ellipses & Foci ($c^2 = a^2 - b^2$)." },
+                { day: "Fri, Mar 12 (HW)", type: "hw", text: "Holt Alg 2 Section 10.2 Circle Equations Set (~30 min)." },
+                { day: "Sat, Mar 13 (HW)", type: "hw", text: "Holt Alg 2 Section 10.3 Ellipse Vertices & Foci (~30 min)." },
+                { day: "Mon, Mar 15 (HW)", type: "hw", text: "Mid-Chapter 10 Circles & Ellipses Practice (~30 min)." }
+            ]
+        },
+        {
+            id: "week-17",
+            semester: "spring",
+            weekLabel: "Week 17: Mar 17 – Mar 22, 2027",
+            chapterTag: "Chapter 10 Conic Sections (Week 2 of 2)",
+            tagClass: "",
+            sidenote: "For hyperbolas, the focal relationship is $c^2 = a^2 + b^2$ (note the plus sign, opposite to ellipses).",
+            days: [
+                { day: "Tue, Mar 16 (Class)", type: "class", text: "Section 10.4: Hyperbolas & Asymptotes; Section 10.5: Parabolas (Focus-Directrix Definition)." },
+                { day: "Wed, Mar 17 (HW)", type: "hw", text: "Holt Alg 2 Section 10.4 & 10.5 Conic Equations (~30 min)." },
+                { day: "Thu, Mar 18 (Class)", type: "class", text: "Section 10.6: Identifying Conic Sections by Completing the Square; Section 10.7: Nonlinear Systems.", checkpoint: "Chapter 10 Checkpoint" },
+                { day: "Fri, Mar 19 (HW)", type: "hw", text: "Holt Alg 2 Section 10.6 Conic Classification Set (~30 min)." },
+                { day: "Sat, Mar 20 (HW)", type: "hw", text: "Holt Alg 2 Section 10.7 Nonlinear Systems (~30 min)." },
+                { day: "Mon, Mar 22 (HW)", type: "hw", text: "Chapter 10 Checkpoint Review (~30 min)." }
+            ]
+        },
+        {
+            id: "week-18",
+            semester: "spring",
+            weekLabel: "Spring Break: Mar 23 – Apr 6, 2027",
+            chapterTag: "Spring Recess (No Classes)",
+            tagClass: "break-tag",
+            sidenote: "Classes resume Thursday, April 8, 2027 with Chapter 11 (Probability and Statistics).",
+            days: [
+                { day: "Mar 23 – Apr 6", type: "holiday", text: "Spring Recess — No Scheduled Classes or Daily Homework." }
+            ]
+        },
+        {
+            id: "week-19",
+            semester: "spring",
+            weekLabel: "Week 18: Apr 7 – Apr 13, 2027",
+            chapterTag: "Chapter 11 Probability & Statistics (2-Week Condensed)",
+            tagClass: "",
+            sidenote: "Permutations $_nP_r = \\frac{n!}{(n-r)!}$ count ordered arrangements; combinations $_nC_r = \\frac{n!}{r!(n-r)!}$ count unordered selections.",
+            days: [
+                { day: "Thu, Apr 8 (Class)", type: "class", text: "Section 11.1–11.3: Permutations, Combinations, Theoretical & Experimental Probability, Independent/Dependent Events." },
+                { day: "Fri, Apr 9 (HW)", type: "hw", text: "Holt Alg 2 Section 11.1 & 11.2 Counting Principles (~30 min)." },
+                { day: "Sat, Apr 10 (HW)", type: "hw", text: "Holt Alg 2 Section 11.3 Compound Probability (~30 min)." },
+                { day: "Mon, Apr 12 (HW)", type: "hw", text: "Conditional Probability & Two-Way Tables Set (~30 min)." }
+            ]
+        },
+        {
+            id: "week-20",
+            semester: "spring",
+            weekLabel: "Week 19: Apr 14 – Apr 20, 2027",
+            chapterTag: "Chapter 11 (Part 2) & Chapter 12 Sequences & Series (Week 1)",
+            tagClass: "",
+            sidenote: "An arithmetic sequence adds a constant difference $d$; a geometric sequence multiplies by a constant ratio $r$.",
+            days: [
+                { day: "Tue, Apr 13 (Class)", type: "class", text: "Section 11.4–11.6: Compound Events, Measures of Central Tendency, Normal Distributions.", checkpoint: "Chapter 11 Checkpoint" },
+                { day: "Wed, Apr 14 (HW)", type: "hw", text: "Holt Alg 2 Section 11.5 & 11.6 Normal Curve Drills (~30 min)." },
+                { day: "Thu, Apr 15 (Class)", type: "class", text: "Section 12.1: Introduction to Sequences; Section 12.2: Series & Summation Notation ($\\Sigma$)." },
+                { day: "Fri, Apr 16 (HW)", type: "hw", text: "Holt Alg 2 Section 12.1 Explicit & Recursive Rules (~30 min)." },
+                { day: "Sat, Apr 17 (HW)", type: "hw", text: "Holt Alg 2 Section 12.2 Sigma Notation Set (~30 min)." },
+                { day: "Mon, Apr 19 (HW)", type: "hw", text: "Mid-Chapter 12 Sequences Practice (~30 min)." }
+            ]
+        },
+        {
+            id: "week-21",
+            semester: "spring",
+            weekLabel: "Week 20: Apr 21 – Apr 27, 2027",
+            chapterTag: "Chapter 12 Sequences & Series (Week 2) & Spring Exam III",
+            tagClass: "exam-tag",
+            sidenote: "Spring Exam III covers Chapters 10 and 11. An infinite geometric series converges to $S = \\frac{a_1}{1 - r}$ if and only if $|r| < 1$.",
+            days: [
+                { day: "Tue, Apr 20 (Exam)", type: "exam", text: "Spring In-Class Exam III (Chapters 10–11) + Section 12.3: Arithmetic Sequences & Series." },
+                { day: "Wed, Apr 21 (HW)", type: "hw", text: "Holt Alg 2 Section 12.3 Arithmetic Series Drills (~30 min)." },
+                { day: "Thu, Apr 22 (Class)", type: "class", text: "Section 12.4: Geometric Sequences & Series; Section 12.5: Mathematical Induction & Infinite Geometric Series.", checkpoint: "Chapter 12 Checkpoint" },
+                { day: "Fri, Apr 23 (HW)", type: "hw", text: "Holt Alg 2 Section 12.4 Finite Geometric Series (~30 min)." },
+                { day: "Sat, Apr 24 (HW)", type: "hw", text: "Holt Alg 2 Section 12.5 Infinite Convergence Set (~30 min)." },
+                { day: "Mon, Apr 26 (HW)", type: "hw", text: "Chapter 12 Review & Checkpoint Set (~30 min)." }
+            ]
+        },
+        {
+            id: "week-22",
+            semester: "spring",
+            weekLabel: "Week 21: Apr 28 – May 4, 2027",
+            chapterTag: "Chapter 13 Trigonometric Functions",
+            tagClass: "",
+            sidenote: "Convert between degrees and radians using $\\pi\\text{ radians} = 180^\\circ$. On the unit circle, $(\\cos\\theta, \\sin\\theta)$ gives exact coordinates.",
+            link: { text: "Khan Academy: Unit Circle & Trigonometry", url: "https://www.khanacademy.org/math/trigonometry" },
+            days: [
+                { day: "Tue, Apr 27 (Class)", type: "class", text: "Section 13.1: Right-Triangle Trigonometry; Section 13.2: Angles of Rotation & Radian Measure." },
+                { day: "Wed, Apr 28 (HW)", type: "hw", text: "Holt Alg 2 Section 13.1 & 13.2 Degree-Radian Conversions (~30 min)." },
+                { day: "Thu, Apr 29 (Class)", type: "class", text: "Section 13.3: The Unit Circle; Section 13.4: Inverses of Trigonometric Functions; Section 13.5–13.6: Laws of Sines & Cosines.", checkpoint: "Chapter 13 Checkpoint" },
+                { day: "Fri, Apr 30 (HW)", type: "hw", text: "Holt Alg 2 Section 13.3 Unit Circle Exact Values (~30 min)." },
+                { day: "Sat, May 1 (HW)", type: "hw", text: "Holt Alg 2 Section 13.5 & 13.6 Triangle Solving Set (~30 min)." },
+                { day: "Mon, May 3 (HW)", type: "hw", text: "Chapter 13 Review & Periodic Graphs Prep (~30 min)." }
+            ]
+        },
+        {
+            id: "week-23",
+            semester: "spring",
+            weekLabel: "Week 22: May 5 – May 13, 2027",
+            chapterTag: "Chapter 14 Trigonometric Graphs & Identities + Final Exam",
+            tagClass: "exam-tag",
+            sidenote: "The Pythagorean identity $\\sin^2\\theta + \\cos^2\\theta = 1$ underlies all trigonometric verification problems on Part II of the Final Exam.",
+            days: [
+                { day: "Tue, May 4 (Class)", type: "class", text: "Section 14.1–14.2: Graphs of Sine, Cosine & Tangent Functions; Translations of Trigonometric Graphs." },
+                { day: "Wed, May 5 (HW)", type: "hw", text: "Holt Alg 2 Section 14.1 & 14.2 Amplitude, Period & Phase Shift (~30 min)." },
+                { day: "Thu, May 6 (Class)", type: "class", text: "Section 14.3–14.5: Fundamental Trigonometric Identities, Sum/Difference & Double-Angle Identities.", checkpoint: "Chapter 14 Checkpoint" },
+                { day: "Fri, May 7 (HW)", type: "hw", text: "Holt Alg 2 Section 14.3 & 14.4 Identity Proofs (~30 min)." },
+                { day: "Sat, May 8 (HW)", type: "hw", text: "Cumulative Final Exam Review Packet Part A (~30 min)." },
+                { day: "Mon, May 10 (HW)", type: "hw", text: "Cumulative Final Exam Review Packet Part B (~30 min)." },
+                { day: "Tue, May 11 (Last Class)", type: "exam", text: "Last Day of Class — Comprehensive Review & Final Exam Part I (Chapters 1–7)." },
+                { day: "Thu, May 13 (Final Exam)", type: "exam", text: "Cumulative Final Exam Part II (Chapters 8–14)." }
+            ]
+        }
+    ];
+
+    /* ==========================================================================
+       HIGH DATA-INK SVG PACING SPARKLINE (1-WEEK VS 2-WEEK CHAPTERS)
+       ========================================================================== */
+    function renderPacingSparkline() {
+        const container = document.getElementById('pacing-sparkline');
+        // Weeks allocated per chapter: Ch 1..14
+        const weeksPerChapter = [1, 1, 2, 1, 2, 2, 2, 2, 2, 2, 1.5, 1.5, 1, 1];
+        const w = 260, h = 56, padLeft = 18, padRight = 10, barGap = 4;
+        const barW = (w - padLeft - padRight - barGap * 13) / 14;
+        const baseY = 38;
+
+        let svg = `<svg viewBox="0 0 ${w} ${h}" width="100%" height="auto" role="img" aria-label="Chapter pacing bar chart">`;
+        svg += `<line x1="${padLeft - 4}" y1="${baseY}" x2="${w - padRight + 4}" y2="${baseY}" stroke="#777770" stroke-width="0.8"/>`;
+
+        weeksPerChapter.forEach((wks, idx) => {
+            const x = padLeft + idx * (barW + barGap);
+            const barH = wks * 12;
+            const y = baseY - barH;
+            const fill = wks >= 2 ? '#1e3a8a' : '#991b1b';
+            svg += `<rect x="${x}" y="${y}" width="${barW}" height="${barH}" fill="${fill}" opacity="0.85"/>`;
+            svg += `<text x="${x + barW / 2}" y="${baseY + 11}" font-family="Palatino, Georgia, serif" font-size="7.5" fill="#444440" text-anchor="middle">${idx + 1}</text>`;
+        });
+
+        svg += `</svg>`;
+        svg += `<div style="font-size: 0.76rem; font-style: italic; color: var(--ink-muted); margin-top: 0.15rem;">Figure 1. Weeks per chapter (Ch. 1&ndash;14): crimson = 1-wk review; slate = 2-wk core.</div>`;
+        container.innerHTML = svg;
+    }
+
+    /* ==========================================================================
+       RENDER WEEKLY SCHEDULE IN ASYMMETRIC TUFTE ROWS
+       ========================================================================== */
+    function renderSchedule(filter = 'all') {
+        const container = document.getElementById('schedule-container');
+        const filtered = filter === 'all'
+            ? scheduleData
+            : scheduleData.filter(w => w.semester === filter);
+
+        container.innerHTML = filtered.map((week, idx) => {
+            const dayItemsHtml = week.days.map(d => {
+                let labelClass = 'day-label';
+                if (d.type === 'class') labelClass += ' class-day';
+                else if (d.type === 'exam') labelClass += ' exam-day';
+                else if (d.type === 'holiday') labelClass += ' holiday-day';
+
+                const bodyClass = d.type === 'hw' ? 'hw-note' : '';
+                const cpHtml = d.checkpoint
+                    ? ` <span class="checkpoint-inline">&mdash; ${d.checkpoint}</span>`
+                    : '';
+
+                return `
+                    <div class="agenda-item">
+                        <span class="${labelClass}">${d.day}:</span>
+                        <span class="${bodyClass}">${d.text}</span>${cpHtml}
+                    </div>
+                `;
+            }).join('');
+
+            const linkHtml = week.link
+                ? `<div style="margin-top: 0.45rem;"><a href="${week.link.url}" target="_blank" rel="noopener noreferrer" class="tufte-link">Reference: ${week.link.text} &rarr;</a></div>`
+                : '';
+
+            return `
+                <article class="week-block tufte-row" id="${week.id}">
+                    <div class="main-col">
+                        <div class="week-header">
+                            <h3 class="week-title">${week.weekLabel}</h3>
+                            <span class="week-chapter-tag ${week.tagClass}">${week.chapterTag}</span>
+                        </div>
+                        <dl class="daily-agenda">
+                            ${dayItemsHtml}
+                        </dl>
+                        <button type="button" class="mobile-sidenote-toggle" onclick="toggleNote('sn-${week.id}')">&#9656; Instructor Note</button>
+                    </div>
+
+                    <aside class="margin-col">
+                        <div class="sidenote-card sidenote-collapsible" id="sn-${week.id}">
+                            <span class="sidenote-title">Instructor Note.</span> ${week.sidenote}
+                            ${linkHtml}
+                        </div>
+                    </aside>
+                </article>
+            `;
+        }).join('');
+
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise([container]);
+        }
+    }
+
+    function populateJumpSelector() {
+        const select = document.getElementById('week-jump-select');
+        scheduleData.forEach(w => {
+            const opt = document.createElement('option');
+            opt.value = w.id;
+            opt.textContent = `${w.weekLabel.split(':')[0]} — ${w.chapterTag}`;
+            select.appendChild(opt);
+        });
+    }
+
+    function filterSchedule(semester) {
+        ['all', 'fall', 'spring'].forEach(key => {
+            const btn = document.getElementById(`tab-${key}`);
+            if (btn) btn.classList.toggle('active', key === semester);
+        });
+        renderSchedule(semester);
+    }
+
+    function jumpToWeek(weekId) {
+        if (!weekId) return;
+        // Ensure full-year view is active so the target week is visible
+        filterSchedule('all');
+        const target = document.getElementById(weekId);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    function toggleNote(noteId) {
+        const el = document.getElementById(noteId);
+        if (el) el.classList.toggle('open');
+    }
+
+    window.onload = function () {
+        renderPacingSparkline();
+        populateJumpSelector();
+        renderSchedule('all');
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise();
+        }
+    };
+</script>
+
+</body>
+</html>
