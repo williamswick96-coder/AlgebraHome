@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Peter the Rock Academy | Algebra 2 Course Portal</title>
+    <!-- Google Fonts for Tufte Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ET+Book:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- MathJax for LaTeX Typesetting -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #fffff8;
+            --text-color: #111111;
+            --muted-color: #777777;
+            --border-color: #e5e5d0;
+            --accent-color: #990000;
+            --accent-bg: #fdfdf5;
+        }
+
+        body {
+            font-family: 'ET Book', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            text-rendering: optimizeLegibility;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding: 2.5rem 2rem 1.5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .school-brand {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        h1.site-title {
+            font-size: 2.25rem;
+            font-weight: 400;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .instructor-info {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--muted-color);
+        }
+
+        /* Tufte Asymmetric Two-Column Grid */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            aside.right-margin {
+                display: none;
+            }
+        }
+
+        main {
+            max-width: 700px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.3rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* Margin Notes */
+        aside.right-margin {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #333333;
+            line-height: 1.5;
+            padding-top: 0.5rem;
+            border-left: 2px solid var(--border-color);
+            padding-left: 1rem;
+        }
+
+        .margin-note {
+            margin-bottom: 2.5rem;
+        }
+
+        .margin-note strong {
+            display: block;
+            color: var(--accent-color);
+            margin-bottom: 0.2rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Semester Controls */
+        .semester-controls {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0 1.5rem 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .semester-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--muted-color);
+        }
+
+        .semester-btn.active {
+            background: var(--accent-color);
+            color: #ffffff;
+            border-color: var(--accent-color);
+        }
+
+        /* Schedule Blocks */
+        .week-block {
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            background-color: var(--accent-bg);
+        }
+
+        .week-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .week-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--accent-color);
+        }
+
+        .chapter-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted-color);
+        }
+
+        .schedule-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .schedule-item {
+            margin-bottom: 0.75rem;
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .schedule-item {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
+            }
+        }
+
+        .day-label {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .day-content {
+            color: #333333;
+        }
+
+        .checkpoint-highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            padding: 2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--muted-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <div class="school-brand">Saint Peter the Rock Academy</div>
+            <h1 class="site-title">Algebra 2 Course Portal</h1>
+        </div>
+        <div class="instructor-info">
+            Instructor: Dr. William A. Swick
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Main Reading & Schedule Column -->
+        <main>
+            <h2>Course Overview</h2>
+            <p>
+                Welcome to Algebra 2 at Saint Peter the Rock Academy. This portal outlines our complete academic year schedule covering Chapters 1 through 14. Pacing is carefully balanced with one week dedicated to review chapters and two weeks allocated to core chapters. Daily problem sets reinforce key concepts introduced during in-class instruction.
+            </p>
+
+            <h2>Assessment & Routine</h2>
+            <p>
+                In-class instruction occurs every Tuesday and Thursday. Students complete focused homework problem sets on Mondays, Wednesdays, Fridays, and Saturdays. Chapter Checkpoint assignments are completed on Mondays following each chapter's completion.
+            </p>
+
+            <!-- Semester Toggle Controls -->
+            <div class="semester-controls">
+                <button onclick="switchSemester('fall')" id="btn-fall" class="semester-btn active">Fall Semester 2026</button>
+                <button onclick="switchSemester('spring')" id="btn-spring" class="semester-btn">Spring Semester 2027</button>
+            </div>
+
+            <!-- Fall Semester Schedule -->
+            <div id="semester-fall">
+                <!-- Week 1 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 1: Nov 8 – Nov 14, 2026</span>
+                        <span class="chapter-tag">Chapter 1 Review</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Nov 10 (Class):</span>
+                            <span class="day-content">Section 1.1: Tables & Graphs, Section 1.2: Slopes & Intercepts, Section 1.3: Linear Equations</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Nov 11 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 1.1 & 1.2 Drills.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Nov 12 (Class):</span>
+                            <span class="day-content">Section 1.4: Direct Variation, Section 1.5: Scatter Plots, Section 1.6: Inequalities.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Nov 13 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 1.3 & 1.4 Practice Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Nov 14 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 1.5 & 1.6 Exercises.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Nov 16 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 1 Checkpoint Assignment</span> & Review Set.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 2: Nov 15 – Nov 21, 2026</span>
+                        <span class="chapter-tag">Chapter 2 Review</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Nov 17 (Class):</span>
+                            <span class="day-content">Section 2.1: Operations with Numbers, Section 2.2: Exponents, Section 2.3: Intro to Functions.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Nov 18 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 2.1 & 2.2 Exponent Drills.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Nov 19 (Class):</span>
+                            <span class="day-content">Section 2.4: Function Operations, Section 2.5: Inverses, Section 2.6: Transformations.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Nov 20 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 2.3 & 2.4 Practice Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Nov 21 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 2.5 & 2.6 Exercises.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Nov 23 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 2 Checkpoint Assignment</span> & Review Set.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 3: Nov 22 – Nov 28, 2026</span>
+                        <span class="chapter-tag">Chapter 3 (Part 1 - Thanksgiving Week)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Nov 24 (Class):</span>
+                            <span class="day-content">Section 3.1: Systems by Graphing/Substitution & Section 3.2: Elimination.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Nov 26:</span>
+                            <span class="day-content" style="color: var(--accent-color); font-weight: 600;">No Class — Thanksgiving Break</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Nov 30 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 3.1 & 3.2 Systems Practice.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 4: Nov 29 – Dec 5, 2026</span>
+                        <span class="chapter-tag">Chapter 3 (Part 2 - Linear Systems)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Dec 1 (Class):</span>
+                            <span class="day-content">Section 3.3: Systems in Three Variables & Section 3.4: Linear Inequalities in Two Variables.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Dec 2 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 3.3 Three-Variable Drills.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Dec 3 (Class):</span>
+                            <span class="day-content">Section 3.5: Systems of Inequalities & Section 3.6: Linear Programming.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Dec 4 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 3.4 & 3.5 Practice Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Dec 5 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 3.6 Optimization Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Dec 7 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 3 Checkpoint Assignment</span> & Matrix Prep Set.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 5 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 5: Dec 6 – Dec 12, 2026</span>
+                        <span class="chapter-tag">Chapter 4 Review & Fall Test #1</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Dec 8 (Class):</span>
+                            <span class="day-content">Section 4.1: Matrices, Section 4.2: Matrix Operations, Section 4.3: Inverses & Determinants.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Dec 9 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Chapter 4 Matrix Practice Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Dec 11 (Class):</span>
+                            <span class="day-content" style="font-weight: 600;">Fall In-Class Test #1 (Chapters 1–4 Review Topics).</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Dec 12 (HW):</span>
+                            <span class="day-content">Fall Test #1 Error Analysis.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Dec 13 (HW):</span>
+                            <span class="day-content">Semester Review Set 1.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Dec 15 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 4 Checkpoint Assignment</span> & Midterm Preparation Exercises.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 6 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 6: Dec 13 – Dec 19, 2026</span>
+                        <span class="chapter-tag">Fall Test #2 (Midterm)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Dec 15 (Class):</span>
+                            <span class="day-content">Semester 1 Comprehensive Review & Problem Workshop.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Dec 16 (HW):</span>
+                            <span class="day-content">Midterm Final Review Sheet.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Dec 17 (Class):</span>
+                            <span class="day-content" style="font-weight: 600;">Fall In-Class Test #2 (Midterm Checkpoint).</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Winter Break:</span>
+                            <span class="day-content">Dec 18, 2026 – Jan 4, 2027 (No Classes)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Spring Semester Schedule -->
+            <div id="semester-spring" class="hidden">
+                <!-- Week 7 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 7: Jan 3 – Jan 9, 2027</span>
+                        <span class="chapter-tag">Chapter 5 (Week 1 - Quadratics Intro & Factoring)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Jan 5 (Class):</span>
+                            <span class="day-content">Section 5.1: Intro to Quadratic Functions & Section 5.2: Solving by Graphing and Factoring.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Jan 6 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 5.1 Graphing Drills.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Jan 7 (Class):</span>
+                            <span class="day-content">Section 5.3: Factoring Quadratic Expressions.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Jan 8 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 5.2 Factoring Exercises.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Jan 9 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 5.3 Advanced Factoring.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Jan 11 (HW):</span>
+                            <span class="day-content">Quadratic Factoring Practice Set.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 8 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 8: Jan 10 – Jan 16, 2027</span>
+                        <span class="chapter-tag">Chapter 5 (Week 2 - Formula & Complex Numbers)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Jan 12 (Class):</span>
+                            <span class="day-content">Section 5.4: Completing the Square & Section 5.5: The Quadratic Formula.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Jan 13 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 5.4 Exercises.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Jan 14 (Class):</span>
+                            <span class="day-content">Section 5.6: Complex Numbers & Quadratic Equations.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Jan 15 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 5.5 Formula Drills.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Jan 16 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 5.6 Complex Number Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Jan 18 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 5 Checkpoint Assignment</span> & Comprehensive Review.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 9 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 9: Jan 17 – Jan 23, 2027</span>
+                        <span class="chapter-tag">Chapter 6 (Week 1 - Exponents & Logarithms Intro)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Jan 19 (Class):</span>
+                            <span class="day-content">Section 6.1: Exponential Growth & Decay & Section 6.2: Exponential Functions.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Jan 20 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 6.1 Growth/Decay Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Jan 21 (Class):</span>
+                            <span class="day-content">Section 6.3: Logarithmic Functions.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Jan 22 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 6.2 Practice.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Jan 23 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 6.3 Logarithm Intro.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Jan 25 (HW):</span>
+                            <span class="day-content">Logarithmic Expressions Drills.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 10 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 10: Jan 24 – Jan 30, 2027</span>
+                        <span class="chapter-tag">Chapter 6 (Week 2 - Log Properties & Equations)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Jan 26 (Class):</span>
+                            <span class="day-content">Section 6.4: Properties of Logarithms & Section 6.5: Exponential & Logarithmic Equations.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Jan 27 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 6.4 Log Properties Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Jan 28 (Class):</span>
+                            <span class="day-content">Section 6.6: The Natural Base e.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Jan 29 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 6.5 Solving Equations.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Jan 30 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 6.6 Natural Base e Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Feb 1 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 6 Checkpoint Assignment</span> & Test Prep.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 11 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 11: Jan 31 – Feb 6, 2027</span>
+                        <span class="chapter-tag">Chapter 7 (Week 1) & Spring Test #1</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Feb 2 (Class):</span>
+                            <span class="day-content">Section 7.1: Polynomial Functions & Section 7.2: Multiplying Polynomials.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Feb 3 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 7.1 & 7.2 Practice.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Feb 5 (Class):</span>
+                            <span class="day-content" style="font-weight: 600;">Spring In-Class Test #1 (Covering Chapters 5 & 6).</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Feb 6 (HW):</span>
+                            <span class="day-content">Test Error Analysis & Polynomial Multiplication.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Feb 7 (HW):</span>
+                            <span class="day-content">Polynomial Operations Problem Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Feb 9 (HW):</span>
+                            <span class="day-content">Polynomial Division Preparation.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 12 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 12: Feb 7 – Feb 13, 2027</span>
+                        <span class="chapter-tag">Chapter 7 (Week 2 - Division & Roots)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Feb 9 (Class):</span>
+                            <span class="day-content">Section 7.3: Dividing Polynomials & Synthetic Division.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Feb 10 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 7.3 Synthetic Division.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Feb 11 (Class):</span>
+                            <span class="day-content">Section 7.4: Finding Real Roots of Polynomial Equations.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Feb 12 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 7.4 Real Roots Practice.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Feb 13 (HW):</span>
+                            <span class="day-content">Polynomial Equations Problem Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Feb 15 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 7 Checkpoint Assignment</span> & Review Set.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 13 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 13: Feb 14 – Feb 20, 2027</span>
+                        <span class="chapter-tag">Chapter 8 (Week 1 - Rational Functions)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Feb 16 (Class):</span>
+                            <span class="day-content">Section 8.1: Variation Functions & Section 8.2: Multiplying & Dividing Rational Expressions.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Feb 17 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 8.1 Variation Drills.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Feb 18 (Class):</span>
+                            <span class="day-content">Section 8.3: Adding & Subtracting Rational Expressions.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Feb 19 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 8.2 Multiplication/Division.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Feb 20 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 8.3 Common Denominators.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Feb 22 (HW):</span>
+                            <span class="day-content">Rational Expressions Complex Fractions.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 14 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 14: Feb 21 – Feb 27, 2027</span>
+                        <span class="chapter-tag">Chapter 8 (Week 2) & Spring Test #2</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Feb 23 (Class):</span>
+                            <span class="day-content">Section 8.4: Rational Functions & Section 8.5: Solving Rational Equations.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Feb 24 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 8.4 & 8.5 Practice.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Feb 26 (Class):</span>
+                            <span class="day-content" style="font-weight: 600;">Spring In-Class Test #2 (Covering Chapters 7 & 8).</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Feb 27 (HW):</span>
+                            <span class="day-content">Test Error Analysis.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Feb 28 (HW):</span>
+                            <span class="day-content">Conic Sections Introductory Reading.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Mar 1 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 8 Checkpoint Assignment</span> & Distance/Midpoint Review.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 15 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 15: Feb 28 – Mar 6, 2027</span>
+                        <span class="chapter-tag">Chapter 9 (Week 1 - Circles & Parabolas)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Mar 2 (Class):</span>
+                            <span class="day-content">Section 9.1: Intro to Conic Sections & Section 9.2: Circles.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Mar 3 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 9.1 & 9.2 Circle Equations.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Mar 4 (Class):</span>
+                            <span class="day-content">Section 9.3: Parabolas.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Mar 5 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 9.3 Parabola Focus/Directrix Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Mar 6 (HW):</span>
+                            <span class="day-content">Parabola Graphing Practice.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Mar 8 (HW):</span>
+                            <span class="day-content">Ellipse Concept Preparation.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 16 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 16: Mar 7 – Mar 13, 2027</span>
+                        <span class="chapter-tag">Chapter 9 (Week 2 - Ellipses & Hyperbolas)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Mar 9 (Class):</span>
+                            <span class="day-content">Section 9.4: Ellipses & Section 9.5: Hyperbolas.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Mar 10 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 9.4 Ellipse Equations.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Mar 11 (Class):</span>
+                            <span class="day-content">Section 9.6: Identifying Conic Sections.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Mar 12 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 9.5 Hyperbola Asymptotes Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Mar 13 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 9.6 Conic Identification.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Mar 15 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 9 Checkpoint Assignment</span> & Comprehensive Review.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 17 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 17: Mar 14 – Mar 20, 2027</span>
+                        <span class="chapter-tag">Chapter 10 (Part 1) & Spring Test #3</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Mar 16 (Class):</span>
+                            <span class="day-content">Section 10.1: Permutations & Combinations & Section 10.2: Theoretical & Experimental Probability.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Mar 17 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 10.1 Permutation/Combination Drills.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Mar 18 (Class):</span>
+                            <span class="day-content" style="font-weight: 600;">Spring In-Class Test #3 (Covering Chapters 8 & 9).</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Spring Break:</span>
+                            <span class="day-content">March 23 – April 5, 2027 (No Classes)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 18 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 18: Apr 4 – Apr 10, 2027</span>
+                        <span class="chapter-tag">Chapter 10 (Part 2 - Probability)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Apr 6 (Class):</span>
+                            <span class="day-content">Section 10.3: Independent & Dependent Events & Section 10.4: Compound Events.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Apr 7 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 10.3 Probability Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Apr 8 (Class):</span>
+                            <span class="day-content">Section 10.5: Binomial Distributions.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Apr 9 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 10.4 Compound Probability.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Apr 10 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 10.5 Binomial Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Apr 12 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 10 Checkpoint Assignment</span> & Sequences Prep.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 19 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 19: Apr 11 – Apr 17, 2027</span>
+                        <span class="chapter-tag">Chapter 11 (Sequences & Series)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Apr 13 (Class):</span>
+                            <span class="day-content">Section 11.1: Sequences & Series & Section 11.2: Arithmetic Sequences.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Apr 14 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 11.1 & 11.2 Sequence Drills.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Apr 15 (Class):</span>
+                            <span class="day-content">Section 11.3: Geometric Sequences & Series.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Apr 16 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 11.3 Geometric Series Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Apr 17 (HW):</span>
+                            <span class="day-content">Infinite Geometric Series Practice.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Apr 19 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 11 Checkpoint Assignment</span> & Statistics Review.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 20 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 20: Apr 18 – Apr 24, 2027</span>
+                        <span class="chapter-tag">Chapter 12 (Discrete Math & Statistics)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Apr 20 (Class):</span>
+                            <span class="day-content">Section 12.1: Measures of Central Tendency & Section 12.2: Data Gathering & Surveys.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Apr 21 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 12.1 Statistics Drills.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Apr 22 (Class):</span>
+                            <span class="day-content">Section 12.3: Normal Distributions.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Apr 23 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 12.2 Survey Analysis.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, Apr 24 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 12.3 Standard Deviation Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, Apr 26 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 12 Checkpoint Assignment</span> & Trig Prep.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 21 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 21: Apr 25 – May 1, 2027</span>
+                        <span class="chapter-tag">Chapter 13 (Trigonometric Functions)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, Apr 27 (Class):</span>
+                            <span class="day-content">Section 13.1: Right-Angle Trigonometry & Section 13.2: Angles of Rotation.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, Apr 28 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 13.1 Right-Triangle Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, Apr 29 (Class):</span>
+                            <span class="day-content">Section 13.3: Unit Circle Trigonometry.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, Apr 30 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 13.2 Unit Circle Practice.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, May 1 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 13.3 Radians & Degrees Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, May 3 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 13 Checkpoint Assignment</span> & Triangle Laws.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 22 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 22: May 2 – May 8, 2027</span>
+                        <span class="chapter-tag">Chapter 14 (Trig Laws & Review)</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, May 4 (Class):</span>
+                            <span class="day-content">Section 14.1: Law of Sines & Section 14.2: Law of Cosines.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, May 5 (HW):</span>
+                            <span class="day-content">Holt Algebra 2 Section 14.1 & 14.2 Law of Sines/Cosines Drills.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, May 6 (Class):</span>
+                            <span class="day-content">Comprehensive Final Exam Review & Q&A Session.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Fri, May 7 (HW):</span>
+                            <span class="day-content">Practice Final Exam Part 1 Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Sat, May 8 (HW):</span>
+                            <span class="day-content">Practice Final Exam Part 2 Set.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Mon, May 10 (HW):</span>
+                            <span class="day-content"><span class="checkpoint-highlight">Chapter 14 Checkpoint Assignment</span> & Master Formulas Review.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Week 23 -->
+                <div class="week-block">
+                    <div class="week-header">
+                        <span class="week-title">Week 23: May 9 – May 15, 2027</span>
+                        <span class="chapter-tag">Final Exams</span>
+                    </div>
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="day-label">Tue, May 11 (Class):</span>
+                            <span class="day-content" style="font-weight: 600;">Final Exam Part 1 (In-Class Cumulative Assessment).</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Wed, May 12 (HW):</span>
+                            <span class="day-content">Final Exam Reflection & Course Wrap-up.</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="day-label">Thu, May 13 (Class):</span>
+                            <span class="day-content" style="font-weight: 600;">Final Exam Part 2 & Course Conclusion (Last Day of Class).</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Margin Notes Column -->
+        <aside class="right-margin">
+            <div class="margin-note">
+                <strong>Academic Pacing</strong>
+                Review chapters (Chapters 1–4) are scheduled for one week each. Core advanced chapters (Chapters 5–14) are allocated two weeks each to ensure thorough concept mastery.
+            </div>
+
+            <div class="margin-note">
+                <strong>Textbook Reference</strong>
+                All problem sets and exercise numbers correspond directly to <em>Holt Algebra 2</em> (Holt Rinehart Winston). Students are required to bring their textbook to all Tuesday and Thursday class sessions.
+            </div>
+
+            <div class="margin-note">
+                <strong>Key Dates</strong>
+                <ul>
+                    <li>Course Start: Nov 10, 2026</li>
+                    <li>Thanksgiving Break: Nov 26, 2026</li>
+                    <li>Winter Recess: Dec 17, 2026 – Jan 5, 2027</li>
+                    <li>Spring Break: Mar 23 – Apr 6, 2027</li>
+                    <li>Final Exams: May 11 & May 13, 2027</li>
+                </ul>
+            </div>
+
+            <div class="margin-note">
+                <strong>Grade Token Submission</strong>
+                Copy and paste grade tokens generated at the end of each daily module into the portal or submit as instructed by Dr. Swick.
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        Saint Peter the Rock Academy • Department of Mathematics • Algebra 2
+    </footer>
+
+    <script>
+        function switchSemester(semester) {
+            const fallDiv = document.getElementById('semester-fall');
+            const springDiv = document.getElementById('semester-spring');
+            const fallBtn = document.getElementById('btn-fall');
+            const springBtn = document.getElementById('btn-spring');
+
+            if (semester === 'fall') {
+                fallDiv.classList.remove('hidden');
+                springDiv.classList.add('hidden');
+                fallBtn.classList.add('active');
+                springBtn.classList.remove('active');
+            } else {
+                springDiv.classList.remove('hidden');
+                fallDiv.classList.add('hidden');
+                springBtn.classList.add('active');
+                fallBtn.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
